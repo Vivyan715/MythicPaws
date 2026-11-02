@@ -9,7 +9,12 @@ public class CreatureFactory {
         switch (type) {
             case CATASHTROPHE:
                 return new Catashtrophe();
-
+            case INVISIPIG:
+                return new InvisiPig();
+            case FROSTNOODLE:
+                return new ForstNoodle();
+            case SHADHOP:
+                return new ShadHop();
             default:
                 throw new IllegalArgumentException("Unknown creature type: " + type);
 
