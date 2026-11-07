@@ -1,19 +1,30 @@
 package org.example;
 
-import org.example.Animals.Creatures.Creature;
-import org.example.Animals.Factories.CreatureFactory;
-import org.example.Animals.Factories.PuppyCreatureFactory;
+import org.example.GameControl.StartMenu;
+import org.example.GameControl.StoryState;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
+import java.util.Scanner;
+
 public class Main {
     public static void main(String[] args) {
 
 //        tesztelés
-        CreatureFactory factory = new PuppyCreatureFactory();
+        Scanner scan = new Scanner(System.in);
 
-        Creature cat = factory.createCatashtrophe();
+        StoryState currentScene = new StartMenu();
 
-        System.out.println("Állat neve: " + cat.getName());
+        while (currentScene != null) {
+            currentScene.display();
+            System.out.println("\nYour choice is: ");
+
+            try {
+                int input = Integer.parseInt(scan.nextLine());
+                currentScene = currentScene.handleChoice(input);
+
+
+            } catch (NumberFormatException e) {
+                System.out.println("Please enter a valid number");
+            }
+        }
     }
 }

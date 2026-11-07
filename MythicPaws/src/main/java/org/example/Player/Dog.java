@@ -1,4 +1,4 @@
-package org.example.Animals;
+package org.example.Player;
 
 public class Dog {
 
@@ -6,18 +6,16 @@ public class Dog {
     private String name;
 
     public Dog() {
-        this.hp = 100;
+        this.hp = 80;
     }
 
     public void heal(int amount) {
-        if (this.hp < 100) this.hp += amount;
-        else this.hp = 100;
-    }
-
-    public void damage(int amount) {
-        if (this.hp > 0) this.hp -= amount;
-        else this.hp = 0;
-        //TODO: dog's death
+        if (this.hp < 100) {
+            this.hp += amount;
+        } else {
+            System.out.println("The dog is already healed!");
+            this.hp = 100;
+        }
     }
 
     // GETTERS AND SETTERS
