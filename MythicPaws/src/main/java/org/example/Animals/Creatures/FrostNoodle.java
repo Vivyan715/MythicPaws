@@ -1,7 +1,7 @@
-package org.example.Animals;
+package org.example.Animals.Creatures;
 
-public class ForstNoodle extends Creature {
-    public ForstNoodle() {
+public class FrostNoodle extends Creature {
+    public FrostNoodle() {
         super("Frostnoodle", 130);
     }
 

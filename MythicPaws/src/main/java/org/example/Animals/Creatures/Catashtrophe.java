@@ -1,10 +1,10 @@
-package org.example.Animals;
+package org.example.Animals.Creatures;
 
 //tűzokádó macska
 public class Catashtrophe extends Creature {
 
-    public Catashtrophe() {
-        super("Catashtrophe", 120);
+    public Catashtrophe(String name, int maxHp) {
+        super(name, maxHp);
     }
 
     @Override

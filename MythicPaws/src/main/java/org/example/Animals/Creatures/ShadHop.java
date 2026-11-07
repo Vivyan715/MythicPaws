@@ -1,4 +1,4 @@
-package org.example.Animals;
+package org.example.Animals.Creatures;
 
 public class ShadHop extends Creature {
 

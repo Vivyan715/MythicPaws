@@ -1,4 +1,4 @@
-package org.example.Animals;
+package org.example.Animals.Creatures;
 
 //láthatatlan malac
 public class InvisiPig extends Creature {
