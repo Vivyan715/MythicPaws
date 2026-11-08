@@ -58,13 +58,14 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
 ### Játék működési alapelvei -- State (állapot) kezeléses pattern
 
 - csak két végkimenetel lehet: pacifista és az aggresszív
-- a játék mindig két döntést ad: egy A és egy B választ
+- a játék mindig két döntést ad: egy 1. és egy 2. választ
 - a végkimenetel attól függ hogy a pacifista vagy az aggresszív válaszokból van-e több.
 - attól hogy az első döntésnél az aggresszív irányba terelte a sztorit nem feltétlenül kell ilyen véget érnie. lehetnek
   esetek ahol keresztezik egymást a scene-k
 - a C opció később kerül beépítésre, itt lesz meg a lehetősége hogy kilépjen a játékból és esetlegesen mentsen. --> ezt
   majd a végén ha kész a játék
 - 5 döntési lehetőség --> a player 5 scene-t lát egy játék során.
+    - elvileg 12 screne kell összesen
 - +2 scene:
     - nyitó, amikor belép a játékba és esetlegesen megkapja az opciót, hogy folytassa az aktuális mentésnél --> az
       aktuális mentést is a végén írom meg
