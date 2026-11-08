@@ -25,6 +25,10 @@ public class S2_Pacific implements StoryState {
 
         System.out.println("As you drift off to sleep, you resolve to get a better look at your new guest in the morning.\n");
 
+        System.out.println("=====================");
+        System.out.println("     CHAPTER TWO     ");
+        System.out.println("=====================");
+
         System.out.println("\n#############################################################################################################");
 
         System.out.println("\nWhen you wake up the next morning, the creature you took in is nowhere to be found.");

@@ -96,3 +96,9 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
         2. eset - ha a végére ért a játéknak
 - +1 scene: mentés
     - TODO a megírása későbbre.
+
+## Story telling
+
+- be vannak állítva a történet kiírásához tartozó delay-ek illetve egy typewriter effekt is be van építve a TOOLS
+  mappában
+- TODO: optimalizálni a delayeket és a typewriter gyorsaságát.
