@@ -7,12 +7,14 @@
 - **A döntések kezeléséhez:**
     - State minta → a sztori a belső állapottól függ, amiket külön objektumokba szervez
 - **Játék beállítások:**
-    - singleton → így a memóriában csak egyetlen központi nyilvántartás van arról hogy van-e mentett játék és a játék
-      végét → a játék betöltésekor azonnal meg kell hívódjon.
-    - itt tárolódik el az a "mérleg" ami eldönti melyik végkimenetelbe fog érkezni a játékos
+    - Singleton (`GameSetting`) → így a memóriában csak egyetlen központi nyilvántartás van arról, hogy van-e mentett
+      játék és a játék végét jelző állapotokról → a játék betöltésekor azonnal elérhető.
+    - Itt tárolódik el az a "mérleg", ami eldönti, melyik végkimenetelbe fog érkezni a játékos:
+        - `pacifistChoices`, `aggressiveChoices` számlálók
+        - Metódusok: `addPacifistChoice()`, `addAggressiveChoice()`, `isPacifistEnding()`, `resetGame()`
         - 5 döntés:
-            - ha több az A válasz akkor pacifista véget ér a játék
-            - ha több a B válasz akkor agresszív véget ér a játék
+            - Ha több az agresszív válasz (1), akkor agresszív véget ér a játék
+            - Ha több a pacifista válasz (2), akkor pacifista véget ér a játék
 
 **Abstract Factory megvalósítása:**
 
@@ -26,8 +28,12 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
 - **Konkrét példányok:**
     - `Catashtrophe`, `InvisiPig`, `FrostNoodle`, `ShadHop` → a `Creature` osztály konkrét megvalósításai.
 - **Abstract Factory interfész:**
-    - `CreatureFactory` → Interfész, amely előírja az állatcsalád létrehozó metódusait (`createCatashtrophe()`,
-      `createInvisiPig()`, `createFrostNoodle()`, `createShadHop()`).
+    - `CreatureFactory` → Interfész, amely előírja az állatcsalád létrehozó
+      metódusait:
+        - `createCatashtrophe()`
+        - `createInvisiPig()`
+        - `createFrostNoodle()`
+        - `createShadHop()`
 - **Konkrét Factories / Variánsok:**
     - `PuppyCreatureFactory` → Az állatok kölyök variánsait példányosítja (pl. alacsonyabb HP).
     - `AdultCreatureFactory` → Az állatok felnőtt variánsait példányosítja (pl. magasabb HP).
@@ -48,12 +54,28 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
 
 - minden döntés egy másik jelenethez vezet.
 
-## sebződés és gyógyulás
+- **Játékos (`Player` - `org.example.Player`):**
+    - Állapot: `hp` (alapértelmezetten 100).
+    - Metódusok: `heal(amount)` (maximum 100 HP-ig), `takeDamage(amount)` (0-nál Game Over).
+- **Kutya (`Dog` - `org.example.Player`):**
+    - Állapot: `name`, `hp` (alapértelmezetten 80).
+    - Metódusok: `heal(amount)`, getterek/setterek.
+- **Sebződés és gyógyulás szabályai:**
+    - Támadás esetén a Player és a Dog önálló entitások. Ha a playert támadják, a kutya nem sebződik automatikusan,
+      viszont a player dönthet úgy, hogy megvédi a kutyát.
+    - Rossz döntés esetén, ha a lények támadnak, akkor vagy a playert támadják, vagy a kutyát — sosem mindkettőt
+      egyszerre.
 
-- támadás esetén a player és a kutya is önálló egyed. ha a playert támadják a kutya nem sebződik, viszont a player
-  dönthet úgy hogy megvédi a kutyát.
-- rossz döntés esetén, ha a lények támadnak akkor vagy a playert támadják vagy a kutyát, nincs olyan lehetőség hogy
-  mindkettőt.
+---
+
+### Segédosztályok (`Tools` csomag)
+
+- **ASCII Grafikai Megjelenítés (`AsciiArt` - `org.example.Tools`):**
+    - Feladata: a konzolos vizuális elemek megjelenítése statikus metódusokon keresztül.
+    - Független a játékmotortól, így bármelyik jelenetből vagy menüből közvetlenül meghívható a megfelelő illusztráció
+      kirajzolására.
+    - Jelenlegi metódusok:
+        - `drawCat()`: a Catashtrophe (macska) karakteres ASCII rajzának megjelenítése.
 
 ### Játék működési alapelvei -- State (állapot) kezeléses pattern
 
