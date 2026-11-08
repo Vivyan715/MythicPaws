@@ -1,5 +1,7 @@
 package org.example.GameControl.Scenes;
 
+import org.example.GameControl.GameSetting;
+import org.example.GameControl.Scenes.Scene_2.S2_Pacific;
 import org.example.GameControl.StoryState;
 import org.example.Tools.AsciiArt;
 
@@ -33,7 +35,13 @@ public class Scene_1 implements StoryState {
     @Override
     public StoryState handleChoice(int choice) {
 
-//        TODO: döntések kezelése
+        if (choice == 1) {
+            GameSetting.getInstance().addAggressiveChoice();
+//            TODO: aggresszív s2 meghívása
+        } else if (choice == 2) {
+            GameSetting.getInstance().addPacifistChoice();
+            return new S2_Pacific();
+        }
 
         System.out.println("Incorrect answer! Please choose between [1] or [2].");
         return this;
