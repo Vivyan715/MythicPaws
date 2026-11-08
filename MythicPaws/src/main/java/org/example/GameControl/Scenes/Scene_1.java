@@ -1,11 +1,24 @@
 package org.example.GameControl.Scenes;
 
+import org.example.Animals.Creatures.Creature;
+import org.example.Animals.Factories.CreatureFactory;
+import org.example.Animals.Factories.PuppyCreatureFactory;
 import org.example.GameControl.GameSetting;
 import org.example.GameControl.Scenes.Scene_2.S2_Pacific;
 import org.example.GameControl.StoryState;
 import org.example.Tools.AsciiArt;
 
 public class Scene_1 implements StoryState {
+
+    //    létrehozza a cica példányát
+    private Creature kitten;
+
+    public Scene_1() {
+        CreatureFactory factory = new PuppyCreatureFactory();
+        this.kitten = factory.createCatashtrophe();
+        this.kitten.takeDamage(20); //mivel éhes és egyedül van
+    }
+
     @Override
     public void display() {
         System.out.println("\n#############################################################################################################");
@@ -40,7 +53,11 @@ public class Scene_1 implements StoryState {
 //            TODO: aggresszív s2 meghívása
         } else if (choice == 2) {
             GameSetting.getInstance().addPacifistChoice();
-            return new S2_Pacific();
+
+            System.out.println("\nYou shared your dinner with the kitten.");
+            kitten.heal(20); //megetette és biztonságot adott neki
+
+            return new S2_Pacific(kitten);
         }
 
         System.out.println("Incorrect answer! Please choose between [1] or [2].");

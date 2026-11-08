@@ -27,7 +27,7 @@ befogadod.
   kávét és a teraszon megreggellizel.
 - Egy újságot olvasol mikor a kert végében mozgolódásra leszel figyelmes. Felkelsz közelebbről megnézni, észreveszed
   hogy az újonan szerzett barátod visszatért az anyja társaságában.
-- Megijedsz, hiszen az állat jóval nagyobb mint a kis barátod és nem tudod eldönteni, hogy meg fog-e támadni
+- Megijedsz, hiszen az állat jóval nagyobb mint a kis barátod és nem tudod eldönteni, hogy meg fog-e támadni.
 
 -----
 

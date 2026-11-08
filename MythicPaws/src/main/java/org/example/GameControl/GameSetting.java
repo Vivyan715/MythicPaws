@@ -1,13 +1,23 @@
 package org.example.GameControl;
 
+import org.example.Player.Dog;
+import org.example.Player.Player;
+
 public class GameSetting {
 
     private static GameSetting instance;
+
+    //    player és a kutya példánya
+    private Player player;
+    private Dog dog;
+
 
     private int pacifistChoices = 0;
     private int aggressiveChoices = 0;
 
     private GameSetting() {
+        this.player = new Player();
+        this.dog = new Dog();
     }  //this is a private constructor --> from outside it can't be instantiated
 
     //    the singleton's global access point
@@ -40,6 +50,14 @@ public class GameSetting {
     public boolean isPacifistEnding() {
         if (pacifistChoices > aggressiveChoices) return true;
         else return false;
+    }
+
+    public Player getPlayer() {
+        return player;
+    }
+
+    public Dog getDog() {
+        return dog;
     }
 
     public void resetGame() {

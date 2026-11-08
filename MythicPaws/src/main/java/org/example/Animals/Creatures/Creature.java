@@ -32,15 +32,15 @@ public abstract class Creature {
         return hp;
     }
 
-    public void takeDamage(int amount) {
+    public int takeDamage(int amount) {
         if (this.hp <= 0) {
             System.out.println(this.name + "'s already dead!");
-            return;
+            return 0;
         }
 
         if (amount <= 0) {
             System.out.println("The amount of damage cannot be a negative value!");
-            return;
+            return 0;
             //ha a sebzés értéke negatív visszatér --> érvénytelen
         }
 
@@ -49,7 +49,22 @@ public abstract class Creature {
         if (this.hp <= 0) {
             this.hp = 0;
             System.out.println(this.name + " died! RIP.");
+            return this.hp;
         }
 
+        return this.hp;
+
+    }
+
+    public int heal(int amount) {
+        if (this.hp <= 0) {
+            System.out.println(this.name + "'s dead. Please don't mess with the dead, you're not God!");
+            return 0;
+        }
+
+        this.hp += amount;
+        if (this.hp > this.maxHp) this.hp = this.maxHp;
+
+        return this.hp;
     }
 }

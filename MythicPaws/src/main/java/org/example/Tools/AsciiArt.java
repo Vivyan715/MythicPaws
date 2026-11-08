@@ -14,4 +14,19 @@ public class AsciiArt {
         System.out.println("  | (￣ヽ＿_ヽ_)__)");
         System.out.println("  ＼＿）");
     }
+
+    public static void drawTwoCat() {
+        System.out.println("            ＿＿＿");
+        System.out.println("         ／＞     フ");
+        System.out.println("         |  _   _ ミ");
+        System.out.println("        ／`ミ＿x＿ノ");
+        System.out.println("       /         |          ");
+        System.out.println("      /  ヽ      ﾉ     ／⎝、");
+        System.out.println("     │   |  |   |    （ﾟ､ ｡ フ");
+        System.out.println("  ／￣|   |  |  |      ㅏ、 ~ヽ");
+        System.out.println("  | (￣ヽ＿_ヽ_)__)     じし〡_,)ノ");
+        System.out.println("  ＼＿）");
+
+
+    }
 }
