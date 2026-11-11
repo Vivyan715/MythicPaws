@@ -23,8 +23,8 @@ public class AsciiArt {
         System.out.println("       /         |          ");
         System.out.println("      /  ヽ      ﾉ     ／⎝、");
         System.out.println("     │   |  |   |    （ﾟ､ ｡ フ");
-        System.out.println("  ／￣|   |  |  |      ㅏ、 ~ヽ");
-        System.out.println("  | (￣ヽ＿_ヽ_)__)     じし〡_,)ノ");
+        System.out.println("  ／￣|   |  |  |      ㅢ、 ~ヽ");
+        System.out.println("  | (￣ヽ＿_ヽ_)__)     じしᒡ_,)ノ");
         System.out.println("  ＼＿）");
 
 
