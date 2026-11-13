@@ -1,6 +1,8 @@
 package org.example.GameControl.Scenes.Scene_2;
 
 import org.example.Animals.Creatures.Creature;
+import org.example.GameControl.GameSetting;
+import org.example.GameControl.Scenes.Scene_3.S3_Pacific;
 import org.example.GameControl.StoryState;
 import org.example.Tools.AsciiArt;
 import org.example.Tools.TextEffect;
@@ -26,7 +28,7 @@ public class S2_Pacific implements StoryState {
         TextEffect.sleep(2500);
 
         TextEffect.typeWriter("\nThe turbulent encounter fades into a peaceful evening.\nAs you drift off to sleep, you resolve to get a better look at your new guest in the morning.\n", 70);
-        TextEffect.typeWriter("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", 70);
+        TextEffect.typeWriter("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", 35);
 
         TextEffect.sleep(2500);
 
@@ -45,13 +47,13 @@ public class S2_Pacific implements StoryState {
 
         TextEffect.sleep(2500);
 
-        TextEffect.typeWriter("\nPeering through the tall grass, you realize your little companion has returned...\n", 70);
+        TextEffect.typeWriter("Peering through the tall grass, you realize your little companion has returned...\n", 70);
         TextEffect.sleep(100);
         TextEffect.typeWriter("...and it hasn't come alone.\n", 70);
 
         TextEffect.sleep(2500);
 
-        System.out.println("\nA cold jolt of fear courses through you. The adult beast standing next to it is massive.\nIts smoldering eyes lock onto yours, and for a tense, breathless moment, you cannot tell if it is about to attack.\n");
+        System.out.println("\nA cold jolt of fear courses through you. The adult beast standing next to it is massive.\nIts smoldering eyes lock onto yours, and for a tense, breathless moment, you cannot tell if it is about to attack.");
 
         TextEffect.sleep(500);
 
@@ -69,6 +71,25 @@ public class S2_Pacific implements StoryState {
     @Override
     public StoryState handleChoice(int choice) {
 
+        if (choice == 1) {
+            GameSetting.getInstance().addAggressiveChoice();
+
+//            TODO: aggresszív s3 meghívása
+        } else if (choice == 2) {
+            GameSetting.getInstance().addPacifistChoice();
+
+            TextEffect.typeWriter("\nThe creature accepts the food from you and begins to approach in a friendly manner.\nMeanwhile, its kitten watches you curiously. This time, it comes closer and curls up in your lap.\n", 70);
+
+            TextEffect.sleep(2500);
+
+            TextEffect.typeWriter("You have found new friends.\nAlongside your dog, your family has now grown to include two cats.\n", 70);
+
+            TextEffect.sleep(2500);
+
+            TextEffect.typeWriter("You build them a shelter in your yard against the rain and cold weather, which they gladly make use of.\nYou share your food with them, though you aren't entirely sure what you should feed them. You mostly offer them raw meat.\n", 70);
+
+            return new S3_Pacific(kitten);
+        }
 
         System.out.println("Incorrect answer! Please choose between [1] or [2].");
         return this;

@@ -21,6 +21,33 @@
 1.2. A történtek ellenére továbbra is megosztod a vacsorád a macskával. Érdeklődést mutatsz a rejtélyes idegen felé, így
 befogadod.
 
+&#x27A4; **Ha az 1. lehetőséget választotta:**
+
+- Miközben a sintérekre vársz, úgy döntesz, nem kockáztatsz és megpróbálod a sarokba szorítani és egy ketrecbe/dobozba
+  terelni a fenevadat.
+- A sarokba szorított, stresszes állat védekezési ösztöne bekapcsol, és ismét heves lángra lobban.
+- Pánikba esik. Ahogy kétségbeesetten fel-alá rohangál a nappaliban, a bundájából áradó természetellenes hő meggyújtja a
+  szőnyeget és néhány kisebb bútort.
+- A káoszban azonnal megváltozik a prioritásod: a fenevad befogása helyett a ház megmentése lesz az elsődleges.
+- Feltéped a bejárati ajtót, és egy pokróccal/seprűvel sikeresen kikergeted az izzó lényt a sötét éjszakába.
+- miközben tüzet oltasz égési sérüléseket szenvedsz
+- A lángok megfékezése közben azonban komoly másodfokú égési sérüléseket szenvedsz a kezeden és a karodon --> itt a
+  player hp-ja a felére csökken a scene végére
+- Mire a sintérek kiérnek, a lénynek már nyoma sincs. Csak a füstölő nappalit és a sérült, zilált karakteredet találják
+  ott. Azt hiszik bolond vagy és te okoztad a tüzet. Ingerülten megkérnek, hogy ne rabolják az idejüket az éjszaka
+  közepén, majd faképnél hagynak.
+- Fizikailag és mentálisan kimerülve, fájdalmakkal telve roskadsz az ágyba. A történtek annyira szürreálisak, hogy te
+  magad is kezded megkérdőjelezni az elmédet.
+
+------
+
+- néhány nap múlva a teraszon üldögélve mozgást hallasz a bokrok közül. puskádat felkapva elindulsz megnézni mi lehet a
+  zaj forrása.
+- a kutyád ismét érdeklődve közelíti meg a helyszínt
+- ezúttal már egy nagy macskával találod szembe magad.
+- megijedsz
+- nem tudod eldönteni hogy meg fog-e támadni.
+
 &#x27A4; **Ha a 2. lehetőséget választotta:**
 
 - reggel mikor felkelsz nem találod sehol a tegnap befogadott cicát, így elkezded a napod. Kiengeded a kuytát, főzöl egy

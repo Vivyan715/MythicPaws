@@ -29,17 +29,12 @@ public class Scene_1 implements StoryState {
         TextEffect.sleep(800);
 
         TextEffect.typeWriter("You live as a ranger in a small wooden cabin, hidden deep within the forest. \nOne evening, on your way home, you stumble upon a strange creature in the fallen leaves.", 70);
-//        System.out.println("You live as a ranger in a small wooden cabin, hidden deep within the forest.");
-//        TextEffect.sleep(2500);
-//        TextEffect.typeWriter("One evening, on your way home, you stumble upon a strange creature in the fallen leaves.", 35);
+
         TextEffect.sleep(2500);
         TextEffect.typeWriter("It looks like a kitten, trembling in the cold. Taking pity on it, you carefully scoop it up and carry it home.\nEven then, a strange feeling tells you this is no ordinary cat.", 70);
 
         TextEffect.sleep(3000);
 
-//        TextEffect.typeWriter("Even then, a strange feeling tells you this is no ordinary cat.\n", 70);
-
-//        TextEffect.sleep(1700);
 
         TextEffect.typeWriter("Back at the cabin, your dog greets you, immediately sniffing the mysterious little stranger with intense curiosity.\n", 70);
 
@@ -62,7 +57,7 @@ public class Scene_1 implements StoryState {
 
 
         TextEffect.typeWriter("\nWhat do you want to do?", 70);
-//        System.out.println("\nWhat do you want to do?");
+
         TextEffect.typeWriter("[1] Call the animal control / get rid of the beast", 32);
         TextEffect.typeWriter("[2] Share your dinner and take care of it\n", 32);
         AsciiArt.drawCat();
@@ -80,9 +75,6 @@ public class Scene_1 implements StoryState {
             GameSetting.getInstance().addPacifistChoice();
             kitten.heal(20); //megetette és biztonságot adott neki
 
-
-//            System.out.println("\nYou shared your dinner with the kitten.");
-//            System.out.println("" + this.kitten.getName() + " is healed. Current hp of " + this.kitten.getName() + " is: " + this.kitten.getHp() + "HP");
 
             System.out.println("\nYou shared your dinner with the kitten.\n");
 
