@@ -5,13 +5,11 @@ package org.example.Player;
 public class Player {
 
     private int hp;
+    private int attackPower;
 
     public Player() {
         this.hp = 100;
-    }
-
-    public int getHp() {
-        return hp;
+        this.attackPower = 20;
     }
 
     public void heal(int amount) {
@@ -29,5 +27,19 @@ public class Player {
 
         if (this.hp < 0) this.hp = 0;
         // TODO: GAME OVER
+    }
+
+//    GETTER ÉS SETTER
+
+    public int getAttackPower() {
+        return attackPower;
+    }
+
+    public void setAttackPower(int attackPower) {
+        this.attackPower = attackPower;
+    }
+
+    public int getHp() {
+        return hp;
     }
 }
