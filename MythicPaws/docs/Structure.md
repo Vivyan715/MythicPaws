@@ -101,4 +101,15 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
 
 - be vannak állítva a történet kiírásához tartozó delay-ek illetve egy typewriter effekt is be van építve a TOOLS
   mappában
-- TODO: optimalizálni a delayeket és a typewriter gyorsaságát.
+- TODO: optimalizálni a delayeket és a typewriter gyorsaságát. [✓]
+
+## Harcok megírása
+
+- temple method (LINK → https://refactoring.guru/design-patterns/template-method) használva a strategy method-al
+  (LINK → https://refactoring.guru/design-patterns/strategy)
+    - ősosztály
+    - futtatja a while ciklust és ellenőrzi mikor ér véget a harc
+    - körök kezelése --> player kre, ellenfél támadása
+
+    - strategy-vel --> az akciók ([1] támadás, [2] védekezés, [3] gyógyulás) kezelése --> Catashtrophe tüzet okád stb.
+    - 
