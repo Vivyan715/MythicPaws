@@ -7,9 +7,12 @@ public class Player {
     private int hp;
     private int attackPower;
 
+    private int combatHeal;
+
     public Player() {
         this.hp = 100;
         this.attackPower = 20;
+        this.combatHeal = 25;
     }
 
     public void heal(int amount) {
@@ -41,5 +44,13 @@ public class Player {
 
     public int getHp() {
         return hp;
+    }
+
+    public int getCombatHeal() {
+        return combatHeal;
+    }
+
+    public void setCombatHeal(int combatHeal) {
+        this.combatHeal = combatHeal;
     }
 }
