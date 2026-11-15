@@ -129,3 +129,5 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
         - attack --> 30HP
         - heal --> 30HP
         - superpower attack --> 40HP
+    - TODO: megírni a creature-ökben is a rögzített heal és attack értékeket
+- a kutya szerepét egyenlőre félre teszem, ha lesz rá időm megírom
