@@ -111,5 +111,21 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
     - futtatja a while ciklust és ellenőrzi mikor ér véget a harc
     - körök kezelése --> player kre, ellenfél támadása
 
-    - strategy-vel --> az akciók ([1] támadás, [2] védekezés, [3] gyógyulás) kezelése --> Catashtrophe tüzet okád stb.
-    - 
+    - strategy-vel --> az akciók ([1] támadás, [2] védekezés, [3] gyógyulás) kezelése --> Catashtrophe tüzet okád
+      stb. --> külön álló cserélhetp stratégiák a CombatAction-ön keresztül
+    - BattleResult --> ez egy eredmény objektum ami leírja mi lett a harc végkimenetele és kinek mennyi HP-ja maradt -->
+      ezt fogja a Scene feldolgozni
+    - a játékosnak egyenlőre egy attackPower tulajdonságban van rögzítve mekkora az alap sebzése --> TODO: ha lesz idő
+      rá akkor lehetne csinálni fegyvereket amikkel támadhat és így megadva hogy melyikkel harcolva mennyi a támadási
+      ereje --> egyenlőre csak puskával lövöldözik a player.
+
+    - **player heal and attackPower értékei:**
+        - heal --> 25HP
+        - attack --> 20HP
+    - **puppy creature:**
+        - attack --> 10HP
+        - heal --> 15HP
+    - **Adult creature:**
+        - attack --> 30HP
+        - heal --> 30HP
+        - superpower attack --> 40HP
