@@ -45,10 +45,45 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
 ## Az állat fajok:
 
 - CATASHTROPHE → tűzokádó macska → cat-ash-trophe
+    - _puppy:_
+        - max HP: 60
+        - attack: 10HP
+        - heal: 8HP
+        - superpower: 15HP
+    - _adult:_ [✓]
+        - max HP: 120
+        - attack: 15HP
+        - superpower: 40HP
+        - heal: 15HP
+
 - INVISIPIG → láthatatlan malac
+    - _puppy:_
+        - a sztori jelenlegi állása szerint ilyennel nem találkozik, ha lesz időm megírom
+    - _adult:_ [✓]
+        - max HP: 90
+        - attack: 12HP
+        - heal: 20HP
+        - superpower: 35HP
+
+
 - FROSTNOODLE → fehér vadászgörény → ha szalad minden a mancsai alatt deressé válik
+    - _puppy:_
+        - a sztori jelenlegi állása szerint ilyennel nem találkozik, ha lesz időm megírom
+    - _adult:_ [✓]
+        - max HP: 80HP
+        - attack: 18HP
+        - heal: 5HP
+        - superpower: 45HP
+
 - SHADHOP → egy fekete nyúl aminek addig nincs fizikai teste, amíg fény nem éri. egészen addig árnyékként képes
   közlekedni, nesztelenül. képes ajtók résein stb. átfolyni mint bármilyen fény.
+    - _puppy:_
+        - a sztori jelenlegi állása szerint ilyennel nem találkozik, ha lesz időm megírom
+    - _adult:_
+        - max HP: 140
+        - attack: 10HP
+        - heal: 15HP
+        - superpower: 30HP
 
 ## helyzetek és jelenetek
 
@@ -122,17 +157,11 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
     - **player heal and attackPower értékei:**
         - heal --> 25HP
         - attack --> 20HP
-    - **puppy creature:**
-        - attack --> 10HP
-        - heal --> 15HP
-    - **Adult creature:**
-        - attack --> 30HP
-        - heal --> 30HP
-        - superpower attack --> 40HP
 - a superpower akkor kerül bevetésre miután a player egymás után 2x is az attack opciót
   választotta
 - creature heal --> ha 10HP alá esik de nagyobb mint 5HP akkor minden esetben, egyébként minden 3. körben healel ha az
   nem superpower kör
+- ha a player a heal opciót választja az állat is
 
 - a kutya szerepét egyenlőre félre teszem, ha lesz rá időm megírom
 
