@@ -7,22 +7,38 @@ public class PuppyCreatureFactory implements CreatureFactory {
 
     @Override
     public Creature createCatashtrophe() {
-        return new Catashtrophe("Baby Catashtrophe", 60);
+        Catashtrophe creature = new Catashtrophe("Baby Catashtrophe", 60);
+        creature.setAttackPower(10);
+        creature.setHealAmount(15);
+        creature.setSuperPowerDamage(0);
+        return creature;
     }
 
     @Override
     public Creature createInvisiPig() {
-        return new InvisiPig();
+        InvisiPig creature = new InvisiPig();
+        creature.setAttackPower(10);
+        creature.setHealAmount(15);
+        creature.setSuperPowerDamage(0);
+        return creature;
     }
 
     @Override
     public Creature createFrostNoodle() {
-        return new FrostNoodle();
+        FrostNoodle creature = new FrostNoodle();
+        creature.setAttackPower(10);
+        creature.setHealAmount(15);
+        creature.setSuperPowerDamage(0);
+        return creature;
     }
 
     @Override
     public Creature createShadHop() {
-        return new ShadHop();
+        ShadHop creature = new ShadHop();
+        creature.setAttackPower(10);
+        creature.setHealAmount(15);
+        creature.setSuperPowerDamage(0);
+        return creature;
     }
 
 }

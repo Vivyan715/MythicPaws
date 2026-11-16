@@ -129,5 +129,12 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
         - attack --> 30HP
         - heal --> 30HP
         - superpower attack --> 40HP
-    - TODO: megírni a creature-ökben is a rögzített heal és attack értékeket
+   
 - a kutya szerepét egyenlőre félre teszem, ha lesz rá időm megírom
+
+### Hátralévő TODO
+
+- játék mentés fájlba
+- egyedi exception megírása
+- kell egy lamda kifejezés ami a tárolásra és rendezésre szolgál --> erre az inventpry lenne a jó de ha nem lesz időm
+  ezt beleírni akkor keresek egy másik helyet ahol elhelyezhetem

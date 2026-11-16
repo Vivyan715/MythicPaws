@@ -6,6 +6,9 @@ public abstract class Creature {
     private String name;
     private final int maxHp;
     private int hp;
+    private int attackPower;
+    private int healAmount;
+    private int superPowerDamage;
 
     public Creature(String name, int maxHp) {
         this.name = name;
@@ -13,7 +16,7 @@ public abstract class Creature {
         this.hp = maxHp;
     }
 
-    public abstract void superPower();  //csak megmondja, hogy majd kell lennie egy szuperképességnek
+    public abstract void superPower();  //csak megmondja, hogy majd kell lennie egy szuperkézpessségnek
 
     //    GETTERS AND SETTERS
     public String getName() {
@@ -30,6 +33,30 @@ public abstract class Creature {
 
     public int getHp() {
         return hp;
+    }
+
+    public int getAttackPower() {
+        return attackPower;
+    }
+
+    public int getHealAmount() {
+        return healAmount;
+    }
+
+    public int getSuperPowerDamage() {
+        return superPowerDamage;
+    }
+
+    public void setAttackPower(int attackPower) {
+        this.attackPower = attackPower;
+    }
+
+    public void setHealAmount(int healAmount) {
+        this.healAmount = healAmount;
+    }
+
+    public void setSuperPowerDamage(int superPowerDamage) {
+        this.superPowerDamage = superPowerDamage;
     }
 
     public int takeDamage(int amount) {

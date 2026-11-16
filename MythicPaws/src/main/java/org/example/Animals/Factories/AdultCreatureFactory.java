@@ -7,21 +7,37 @@ public class AdultCreatureFactory implements CreatureFactory {
 
     @Override
     public Creature createCatashtrophe() {
-        return new Catashtrophe("Adult Catashtrophe", 120);
+        Catashtrophe creature = new Catashtrophe("Adult Catashtrophe", 120);
+        creature.setAttackPower(30);
+        creature.setHealAmount(30);
+        creature.setSuperPowerDamage(40);
+        return creature;
     }
 
     @Override
     public Creature createInvisiPig() {
-        return new InvisiPig();
+        InvisiPig creature = new InvisiPig();
+        creature.setAttackPower(30);
+        creature.setHealAmount(30);
+        creature.setSuperPowerDamage(40);
+        return creature;
     }
 
     @Override
     public Creature createFrostNoodle() {
-        return new FrostNoodle();
+        FrostNoodle creature = new FrostNoodle();
+        creature.setAttackPower(30);
+        creature.setHealAmount(30);
+        creature.setSuperPowerDamage(40);
+        return creature;
     }
 
     @Override
     public Creature createShadHop() {
-        return new ShadHop();
+        ShadHop creature = new ShadHop();
+        creature.setAttackPower(30);
+        creature.setHealAmount(30);
+        creature.setSuperPowerDamage(40);
+        return creature;
     }
 }
