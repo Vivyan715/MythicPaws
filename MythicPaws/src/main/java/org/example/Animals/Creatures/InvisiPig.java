@@ -4,7 +4,7 @@ package org.example.Animals.Creatures;
 public class InvisiPig extends Creature {
 
     public InvisiPig() {
-        super("InvisiPig", 100);
+        super("InvisiPig", 90);
     }
 
     @Override

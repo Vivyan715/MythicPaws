@@ -3,7 +3,7 @@ package org.example.Animals.Creatures;
 public class ShadHop extends Creature {
 
     public ShadHop() {
-        super("Shadhop", 120);
+        super("Shadhop", 140);
     }
 
     @Override

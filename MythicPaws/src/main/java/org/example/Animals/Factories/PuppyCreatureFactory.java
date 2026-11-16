@@ -7,13 +7,14 @@ public class PuppyCreatureFactory implements CreatureFactory {
 
     @Override
     public Creature createCatashtrophe() {
-        Catashtrophe creature = new Catashtrophe("Baby Catashtrophe", 60);
+        Catashtrophe creature = new Catashtrophe("Kitten Catashtrophe", 60);
         creature.setAttackPower(10);
-        creature.setHealAmount(15);
-        creature.setSuperPowerDamage(0);
+        creature.setHealAmount(8);
+        creature.setSuperPowerDamage(15);
         return creature;
     }
 
+    //    lehetőségnek írtam meg, későbbi fejlesztésre, a sztori jelenlegi állása szerint ezekre nem lesz szükség csak a macskára
     @Override
     public Creature createInvisiPig() {
         InvisiPig creature = new InvisiPig();
