@@ -7,7 +7,7 @@ public class Player {
     private int hp;
     private int attackPower;
 
-    private int combatHeal;
+    private int combatHeal;  //itt adja meg a heal amountot harc közben
 
     public Player() {
         this.hp = 100;
@@ -38,9 +38,6 @@ public class Player {
         return attackPower;
     }
 
-    public void setAttackPower(int attackPower) {
-        this.attackPower = attackPower;
-    }
 
     public int getHp() {
         return hp;
@@ -50,7 +47,4 @@ public class Player {
         return combatHeal;
     }
 
-    public void setCombatHeal(int combatHeal) {
-        this.combatHeal = combatHeal;
-    }
 }

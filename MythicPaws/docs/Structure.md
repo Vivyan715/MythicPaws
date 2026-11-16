@@ -129,7 +129,11 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
         - attack --> 30HP
         - heal --> 30HP
         - superpower attack --> 40HP
-   
+- a superpower akkor kerül bevetésre miután a player egymás után 2x is az attack opciót
+  választotta
+- creature heal --> ha 10HP alá esik de nagyobb mint 5HP akkor minden esetben, egyébként minden 3. körben healel ha az
+  nem superpower kör
+
 - a kutya szerepét egyenlőre félre teszem, ha lesz rá időm megírom
 
 ### Hátralévő TODO
@@ -138,3 +142,5 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
 - egyedi exception megírása
 - kell egy lamda kifejezés ami a tárolásra és rendezésre szolgál --> erre az inventpry lenne a jó de ha nem lesz időm
   ezt beleírni akkor keresek egy másik helyet ahol elhelyezhetem
+- a teljes harc működésbe léptetése után minden állatnak külön heal, superpower és attack érték állítása
+- megírni a heal és a superpower alkalmazását
