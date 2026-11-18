@@ -104,7 +104,7 @@ public class Battle {
     // a lény köre
     protected void CreatureTurn() {
         TextEffect.sleep(500);
-        TextEffect.typeWriter("\n --------" + creature.getName() + "'S TURN --------", 80);
+        TextEffect.typeWriter("\n --------  " + creature.getName().toUpperCase() + "'S TURN  --------", 80);
 
         boolean canHeal = (creatureHealCount < 3) && (creature.getHp() < creature.getMaxHp());
 
@@ -175,7 +175,7 @@ public class Battle {
 
     protected void Defeat() {
         // player veszít --> elfogyott HP --> visszakerül a főmenübe mivel meghalt
-        TextEffect.typeWriter("\n>>>>" + creature.getName().toUpperCase() + " WON THE BATTLE!   <<<<<", 70);
+        TextEffect.typeWriter("\n>>>>   " + creature.getName().toUpperCase() + " WON THE BATTLE!   <<<<<", 70);
 
         TextEffect.typeWriter("\nSee? You kept messing with the nature and that's your punnishment. Next time try to be nice!", 50);
 
