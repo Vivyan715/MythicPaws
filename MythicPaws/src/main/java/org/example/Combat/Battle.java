@@ -128,6 +128,8 @@ public class Battle {
 
             creatureHealCount++;
 
+            TextEffect.typeWriter("[Heals left for " + creature.getName() + ": " + (3 - creatureHealCount) + "/3]", 30);
+
             creature.heal(creature.getHealAmount());
 
         } else if (lastChoice == 3 && canHeal) {
@@ -135,6 +137,8 @@ public class Battle {
             TextEffect.typeWriter(creature.getName() + " follows your example, and retreats to heal.", 30);
 
             creatureHealCount++;
+
+            TextEffect.typeWriter("[Heals left for " + creature.getName() + ": " + (3 - creatureHealCount) + "/3]", 30);
 
             creature.heal(creature.getHealAmount());
         } else {
