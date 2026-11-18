@@ -1,7 +1,14 @@
 package org.example.GameControl.Scenes.Scene_2;
 
 import org.example.Animals.Creatures.Creature;
+import org.example.Animals.Factories.AdultCreatureFactory;
+import org.example.Combat.Battle;
+import org.example.Combat.BattleResult;
+import org.example.GameControl.GameSetting;
+import org.example.GameControl.Scenes.Scene_3.S3_Aggressive;
+import org.example.GameControl.StartMenu;
 import org.example.GameControl.StoryState;
+import org.example.Player.Player;
 import org.example.Tools.TextEffect;
 
 public class S2_Agressive implements StoryState {
@@ -34,6 +41,24 @@ public class S2_Agressive implements StoryState {
 
     @Override
     public StoryState handleChoice(int choice) {
+
+        if (choice == 1) {
+            GameSetting.getInstance().addAggressiveChoice();
+//        itt hozom létre a macskát is és itt kérem le a playert is mivel csak ebben a döntésben van használva
+
+            Creature adultCat = new AdultCreatureFactory().createCatashtrophe();
+            Player player = GameSetting.getInstance().getPlayer();
+
+            Battle battle = new Battle(player, adultCat);
+            BattleResult result = battle.startBattle();
+
+            if (!result.isVictory()) return new StartMenu();
+            else return new S3_Aggressive();
+
+
+        }
+
+//        TODO: PACIFISTA FOLYTATÁS
 
 
         System.out.println("Incorrect answer! Please choose between [1] or [2].");
