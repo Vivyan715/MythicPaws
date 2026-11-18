@@ -45,7 +45,7 @@ public class S2_Pacific implements StoryState {
         TextEffect.typeWriter("\nWhen you wake up the next morning, the creature you took in is nowhere to be found.", 70);
         TextEffect.sleep(1000);
 
-        TextEffect.typeWriter("After a quick search of the cabin, you decide to proceed with your day.\nYou let the dog out, brew a fresh cup of coffee, and step out onto the terrace for breakfast.\n", 70);
+        TextEffect.typeWriter("After a quick search of the cabin, you decide to proceed with your day.\nYou let the dog out, slipping a few dog treats into your pocket, brew a fresh cup of coffee, and step out onto the terrace for breakfast.\n", 70);
 
         TextEffect.sleep(2500);
 

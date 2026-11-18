@@ -3,9 +3,14 @@ package org.example.GameControl.Scenes;
 import org.example.Animals.Creatures.Creature;
 import org.example.Animals.Factories.CreatureFactory;
 import org.example.Animals.Factories.PuppyCreatureFactory;
+import org.example.Combat.Battle;
+import org.example.Combat.BattleResult;
 import org.example.GameControl.GameSetting;
+import org.example.GameControl.Scenes.Scene_2.S2_Agressive;
 import org.example.GameControl.Scenes.Scene_2.S2_Pacific;
+import org.example.GameControl.StartMenu;
 import org.example.GameControl.StoryState;
+import org.example.Player.Player;
 import org.example.Tools.AsciiArt;
 import org.example.Tools.TextEffect;
 
@@ -68,9 +73,22 @@ public class Scene_1 implements StoryState {
     public StoryState handleChoice(int choice) {
 
         if (choice == 1) {
+
+            TextEffect.typeWriter("While you're waiting for the police, you decide not to take any chances.\n", 40);
+            TextEffect.typeWriter("You try to corner it and herd your beast into a box...\n", 40);
+            TextEffect.typeWriter("But when a stressed animal is cornered, its defensive instinct kicks in, and it bursts into a fierce blaze!\n", 40);
+
             GameSetting.getInstance().addAggressiveChoice();
 
-//            TODO: agresszív s2 meghívása
+            Player player = GameSetting.getInstance().getPlayer();
+
+            Battle battle = new Battle(player, kitten);
+            BattleResult result = battle.startBattle();
+
+            if (!result.isVictory()) return new StartMenu();
+            else return new S2_Agressive(kitten);
+
+
         } else if (choice == 2) {
             GameSetting.getInstance().addPacifistChoice();
             kitten.heal(20); //megetette és biztonságot adott neki

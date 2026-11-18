@@ -2,19 +2,33 @@ package org.example.GameControl.Scenes.Scene_2;
 
 import org.example.Animals.Creatures.Creature;
 import org.example.GameControl.StoryState;
+import org.example.Tools.TextEffect;
 
 public class S2_Agressive implements StoryState {
 
     private Creature kitten;
     private Creature catashtrophe;
 
-    public S2_Agressive(Creature kitten, Creature catashtrophe) {
+    public S2_Agressive(Creature kitten) {
         this.kitten = kitten;
-        this.catashtrophe = catashtrophe;
+
     }
 
     @Override
     public void display() {
+
+        TextEffect.typeWriter("\nThe beast collapses lifelessly, but its body does not grow cold. Quite the opposite!\n", 40);
+        TextEffect.typeWriter("Upon his death, his energy is unleashed, and the unnatural heat radiating from his fur sets the carpet ablaze.\n", 40);
+        TextEffect.typeWriter("In the midst of chaos, your priorities change immediately: saving the house becomes your top priority.\n", 40);
+        TextEffect.typeWriter("However, while putting out the flames, you suffer severe second-degree burns on your hand and arm.\n", 40);
+
+        TextEffect.typeWriter("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", 35);
+
+        TextEffect.sleep(2500);
+
+        System.out.println("\n=====================");
+        System.out.println("     CHAPTER TWO     ");
+        System.out.println("=====================");
 
     }
 

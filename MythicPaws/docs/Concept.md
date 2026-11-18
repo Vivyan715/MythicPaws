@@ -23,32 +23,52 @@ befogadod.
 
 &#x27A4; **Ha az 1. lehetőséget választotta:**
 
-- Miközben a sintérekre vársz, úgy döntesz, nem kockáztatsz és megpróbálod a sarokba szorítani és egy ketrecbe/dobozba
-  terelni a fenevadat.
-- A sarokba szorított, stresszes állat védekezési ösztöne bekapcsol, és ismét heves lángra lobban.
-- Pánikba esik. Ahogy kétségbeesetten fel-alá rohangál a nappaliban, a bundájából áradó természetellenes hő meggyújtja a
-  szőnyeget és néhány kisebb bútort.
-- A káoszban azonnal megváltozik a prioritásod: a fenevad befogása helyett a ház megmentése lesz az elsődleges.
-- Feltéped a bejárati ajtót, és egy pokróccal/seprűvel sikeresen kikergeted az izzó lényt a sötét éjszakába.
-- miközben tüzet oltasz égési sérüléseket szenvedsz
-- A lángok megfékezése közben azonban komoly másodfokú égési sérüléseket szenvedsz a kezeden és a karodon --> itt a
-  player hp-ja a felére csökken a scene végére
-- Mire a sintérek kiérnek, a lénynek már nyoma sincs. Csak a füstölő nappalit és a sérült, zilált karakteredet találják
-  ott. Azt hiszik bolond vagy és te okoztad a tüzet. Ingerülten megkérnek, hogy ne rabolják az idejüket az éjszaka
-  közepén, majd faképnél hagynak.
-- Fizikailag és mentálisan kimerülve, fájdalmakkal telve roskadsz az ágyba. A történtek annyira szürreálisak, hogy te
-  magad is kezded megkérdőjelezni az elmédet.
+- Úgy döntesz, nem kockáztatsz egy ilyen veszélyes és természetellenes lénnyel a házadban, ezért a békés közeledés
+  helyett rátámadsz, hogy megszabadulj tőle.
+- Ezzel azonnal élet-halál harc veszi kezdetét a faházban közted és a kiscica között.
+- A sarokba szorított, rémült kis fenevad vadul küzd az életéért: forró karmokkal, tűzzel és a benne rejlő
+  szuperképességgel próbál megvédeni magát.
+- Ha alulmaradsz a küzdelemben, a sérüléseid végzetesnek bizonyulnak a játék veszteséggel véget ér
 
-------
+- Ha felülkerekedsz, végül sikerül legyőznöd és megölnöd a kiscicát, aki élettelenül terül el a padlón.
+- Bár megnyerted a harcot, a győzelem keserű ízt hagy maga után. egy kiszolgáltatott, kölyök állat vére tapad a
+  kezedhez.
+- A küzdelem során szerzett sérüléseid megmaradnak.
+- Mire a sintérek kiérnek, a lény tetemének nyoma sincs. Csak egy finom, forró hamukupac maradt utána.
+- A kiérkező emberek csak a füstölő nappalit és a sérült, zilált karakteredet találják ott.
+- Azt hiszik, zavarodott vagy, és te magad okoztad a tüzet. Ingerülten megkérnek, hogy ne rabolják az idejüket az
+  éjszaka közepén, majd faképnél hagynak.
+- A cica élettelen testével magadra maradsz az éjszaka csendjében.
+- Fizikailag és mentálisan kimerülve, fájdalmakkal telve roskadsz az ágyba.
+- A történtek annyira szürreálisak, hogy te magad is kezded megkérdőjelezni az elmédet...
 
-- néhány nap múlva a teraszon üldögélve mozgást hallasz a bokrok közül. puskádat felkapva elindulsz megnézni mi lehet a
-  zaj forrása.
-- a kutyád ismét érdeklődve közelíti meg a helyszínt
-- ezúttal már egy nagy macskával találod szembe magad.
-- megijedsz
-- nem tudod eldönteni hogy meg fog-e támadni.
+------ **2. jelenet aggresszív vonal**
 
-&#x27A4; **Ha a 2. lehetőséget választotta:**
+Néhány nappal az incidens után a teraszon próbálsz pihenni, épp a kutyádat nyugtatod és adsz neki néhány apró
+jutalomfalatot. A bekötözött, égési sérülésekkel borított karod folyamatosan emlékeztet arra a szürreális éjszakára.
+
+- Hirtelen erős ágtörést hallasz a kert végi bokrok felől. A maradék falatokat gyorsan zsebre vágod, és felállsz.
+- A kutyád a zaj felé indul, de hirtelen megtorpan. Maga alá húzza a farkát, és halkan szűkölve hátrálni kezd.
+- Ebből tudod, hogy baj van. Azonnal felkapod a puskádat – bár a sérült kezeddel fájdalmas tartani –, majd óvatosan a
+  zaj forrása felé indulsz.
+- Ahogy közelebb érsz, a lombok közül ezúttal nem egy kiscica, hanem egy kifejlett, hatalmas fenevad lép elő. Bundája
+  fenyegetően, vörösen parázslik.
+- A lény a levegőbe szimatol. Tekintete egyenesen rád szegeződik, és szinte biztos vagy benne, hogy megérzi rajtad a
+  hamu, és az elpusztult kicsinyének szagát.
+- A csend fojtogató. A bestia mozdulatlanul, feszülten áll, mintha a te első lépésedre várna.
+- A puska a kezedben van, a zsebedben pedig ott lapulnak a kutyának szánt falatok. A korábbi hibád ellenére most
+  kezedben a döntés, hogyan kezeled a helyzetet.
+
+&#x27A4; **Ha a 2. lehetőséget választotta -- nincs harc:**
+
+- Bár a tenyered még mindig kissé lüktet, a kíváncsiságod felülkerekedik a félelmeden. Óvatosan odacsúsztatsz egy kis
+  tál ételt a kis idegen felé.
+  -Először gyanakodva méreget, de végül az éhség felülkerekedik.
+- Ahogy elkezdi enni, a szőrzetéből áradó természetellenes hő lassan alábbhagy.
+- A viharos találkozás után békés este köszönt be.
+- Ahogy elalszol, elhatároztad, hogy reggel alaposabban megnézed az új vendégedet.
+
+**2. jelenet pacifista vonal**
 
 - reggel mikor felkelsz nem találod sehol a tegnap befogadott cicát, így elkezded a napod. Kiengeded a kuytát, főzöl egy
   kávét és a teraszon megreggellizel.
@@ -60,9 +80,9 @@ befogadod.
 
 ### &#x27A4; **2. döntés:**
 
-2.1. Felkapod a puskád és tüzet nyitsz az állatra. &#x2192; ezzel háborút kezdeményezel az erdő állataival.
+2P.1. Felkapod a puskád és tüzet nyitsz az állatra. &#x2192; ezzel háborút kezdeményezel az erdő állataival.
 
-2.2. Lassan hátrálni kezdesz. Néhány méterrel hátrébb a zsebedbe nyúlva előveszel néhány apró jutalom falatot melyet a
+2P.2. Lassan hátrálni kezdesz. Néhány méterrel hátrébb a zsebedbe nyúlva előveszel néhány apró jutalom falatot melyet a
 kutyádnak szoktál adni és legugolva az állat felé nyújtod.
 
 &#x27A4; **Ha az 1. lehetőséget választotta:**
