@@ -1,16 +1,22 @@
 package org.example.GameControl.Scenes.Scene_2;
 
 import org.example.Animals.Creatures.Creature;
+import org.example.Animals.Factories.AdultCreatureFactory;
+
+import org.example.Combat.Battle;
+import org.example.Combat.BattleResult;
 import org.example.GameControl.GameSetting;
+import org.example.GameControl.Scenes.Scene_3.S3_Aggressive;
 import org.example.GameControl.Scenes.Scene_3.S3_Pacific;
+import org.example.GameControl.StartMenu;
 import org.example.GameControl.StoryState;
+import org.example.Player.Player;
 import org.example.Tools.AsciiArt;
 import org.example.Tools.TextEffect;
 
 public class S2_Pacific implements StoryState {
 
     private Creature kitten;
-    private Creature catashtrophe;
 
     public S2_Pacific(Creature kitten) {
         this.kitten = kitten;
@@ -73,8 +79,18 @@ public class S2_Pacific implements StoryState {
 
         if (choice == 1) {
             GameSetting.getInstance().addAggressiveChoice();
+//        itt hozom létre a macskát is és itt kérem le a playert is mivel csak ebben a döntésben van használva
 
-//            TODO: aggresszív s3 meghívása
+            Creature adultCat = new AdultCreatureFactory().createCatashtrophe();
+            Player player = GameSetting.getInstance().getPlayer();
+
+            Battle battle = new Battle(player, adultCat);
+            BattleResult result = battle.startBattle();
+
+            if (!result.isVictory()) return new StartMenu();
+            else return new S3_Aggressive();
+
+
         } else if (choice == 2) {
             GameSetting.getInstance().addPacifistChoice();
 
