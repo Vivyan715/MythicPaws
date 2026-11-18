@@ -1,5 +1,7 @@
 package org.example.Animals.Creatures;
 
+import org.example.Tools.TextEffect;
+
 // ez a fájl az állatok alapja
 public abstract class Creature {
 
@@ -90,7 +92,11 @@ public abstract class Creature {
         }
 
         this.hp += amount;
-        if (this.hp > this.maxHp) this.hp = this.maxHp;
+        if (this.hp > this.maxHp) {
+
+            this.hp = this.maxHp;
+            System.out.println(this.name + " is healed " + amount + "HP");
+        }
 
         return this.hp;
     }

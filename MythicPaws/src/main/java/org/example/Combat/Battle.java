@@ -8,13 +8,18 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
-public abstract class Battle {
+public class Battle {
     // protected --> így a package-en belül elérik a leszármazott osztályok a változókat
     protected Player player;
     protected Creature creature;
     protected Scanner input;
     protected boolean isDefending;
     protected Map<Integer, CombatAction> actionList;
+
+    //    a harc segédváltozói
+    private int playerAttackCount = 0;  //egymás utáni attack opció választása
+    private int lastChoice = 0; //mi volt a player utolsó választása
+    private int creatureHealCount = 0;  //hányszor healelt már az állat (max 3)
 
     public Battle(Player player, Creature creature) {
         this.player = player;
@@ -74,11 +79,16 @@ public abstract class Battle {
             System.out.println("\n[1] Attack!\n[2] Defend\n[3] Heal");
             TextEffect.typeWriter("Choose your action: ", 30);
 
-            int choice = 0;
+            int choice;
 
             try {
                 choice = Integer.parseInt(input.nextLine());
                 selectedAction = actionList.get(choice);
+                lastChoice = choice;
+
+                if (choice == 1) playerAttackCount++; //itt növeli ha a támadást választotta
+
+                else playerAttackCount = 0; //ha bármi mást akkor lenullázom, hogy az egymás utáni támadásokat számolja
 
                 if (selectedAction == null) {
                     TextEffect.typeWriter("Invalid option! Please choose [1], [2] or [3]!\n", 30);
@@ -89,6 +99,54 @@ public abstract class Battle {
         }
 
         selectedAction.execute(player, creature, this);
+    }
+
+    // a lény köre
+    protected void CreatureTurn() {
+        TextEffect.sleep(500);
+        TextEffect.typeWriter("\n --------" + creature.getName() + "'S TURN --------", 80);
+
+        boolean canHeal = (creatureHealCount < 3) && (creature.getHp() < creature.getMaxHp());
+
+        boolean isLastBreaths = creature.getHp() <= (creature.getMaxHp() * 0.2);
+
+        if (playerAttackCount >= 2) {
+            TextEffect.typeWriter("You angered the creature, so it unleashed its superpowers.", 30);
+
+            creature.superPower();
+
+            damagePlayer(creature.getSuperPowerDamage());
+
+            playerAttackCount = 0;
+
+        } else if (canHeal && isLastBreaths) {
+//            creature healel mert az utolsó HP-jain funkcionál
+
+            TextEffect.typeWriter(creature.getName() + " is critically wounded and retreats to heal.", 30);
+
+            TextEffect.typeWriter("[Heals left for " + creature.getName() + ":" + (3 - creatureHealCount) + "]", 30);
+
+            creatureHealCount++;
+
+            creature.heal(creature.getHealAmount());
+
+        } else if (lastChoice == 3 && canHeal) {
+//            creature healel mert a player is
+            TextEffect.typeWriter(creature.getName() + " follows your example, and retreats to heal.", 30);
+
+            creatureHealCount++;
+
+            creature.heal(creature.getHealAmount());
+        } else {
+
+//            ez a default eset
+            TextEffect.typeWriter("\n" + creature.getName() + " attacks you!", 30);
+
+            damagePlayer(creature.getAttackPower());
+        }
+
+        TextEffect.sleep(500);
+
     }
 
     public void damagePlayer(int baseDamage) {
@@ -102,13 +160,22 @@ public abstract class Battle {
     }
 
     // ezeket a jelenetkhez lehet igazítani
-    protected abstract void BattleStart();  // harc elkezdése
+    protected void BattleStart() {
+    }  // harc elkezdése
 
-    protected abstract void CreatureTurn(); // a lény köre
+    protected void Victory() {
+        // player nyer
+        TextEffect.typeWriter("\n>>>> YOU ARE THE WINNER!  <<<<<", 70);
+        TextEffect.typeWriter("\nAlthough you killed an innocent animal, you won the battle. Congratulation... I guess...", 50);
+    }
 
-    protected abstract void Victory();      // player nyeresége
+    protected void Defeat() {
+        // player veszít --> elfogyott HP --> visszakerül a főmenübe mivel meghalt
+        TextEffect.typeWriter("\n>>>>" + creature.getName().toUpperCase() + " WON THE BATTLE!   <<<<<", 70);
 
-    protected abstract void Defeat();       // player veszít
+        TextEffect.typeWriter("\nSee? You kept messing with the nature and that's your punnishment. Next time try to be nice!", 50);
+
+    }
 
     // SETTEREK ÉS GETTEREK
     public void setDefending(boolean isDefending) {

@@ -1,5 +1,7 @@
 package org.example.Animals.Creatures;
 
+import org.example.Tools.TextEffect;
+
 //tűzokádó macska
 public class Catashtrophe extends Creature {
 
@@ -9,9 +11,7 @@ public class Catashtrophe extends Creature {
 
     @Override
     public void superPower() {
-
-        System.out.println("The Kasha summons ethereal blue flames!");
-
-        //TODO: szupererő megírása
+        TextEffect.typeWriter("\n>>> The" + getName() + " lets out a deafening screech! <<<\n", 30);
+        TextEffect.typeWriter("Its entire body erupts in ethereal blue fire as it unleashes a catastrophic flame burst!\n", 30);
     }
 }

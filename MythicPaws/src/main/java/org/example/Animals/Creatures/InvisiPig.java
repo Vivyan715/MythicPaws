@@ -1,5 +1,7 @@
 package org.example.Animals.Creatures;
 
+import org.example.Tools.TextEffect;
+
 //láthatatlan malac
 public class InvisiPig extends Creature {
 
@@ -9,8 +11,7 @@ public class InvisiPig extends Creature {
 
     @Override
     public void superPower() {
-        System.out.println("The pig became invisible.");
-
-//        TODO: szupererő megírása
+        TextEffect.typeWriter("\n>>> The " + getName() + " vanishes into thin air! <<<\n", 30);
+        TextEffect.typeWriter("Your greed was a trap. A blood-curdling squeal erupts from behind as a terrifying, invisible force slams you violently to the ground!\n", 30);
     }
 }

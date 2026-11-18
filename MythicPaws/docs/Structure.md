@@ -157,11 +157,13 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
     - **player heal and attackPower értékei:**
         - heal --> 25HP
         - attack --> 20HP
-- a superpower akkor kerül bevetésre miután a player egymás után 2x is az attack opciót
-  választotta
-- creature heal --> ha 10HP alá esik de nagyobb mint 5HP akkor minden esetben, egyébként minden 3. körben healel ha az
-  nem superpower kör
-- ha a player a heal opciót választja az állat is
+- a superpower akkor kerül bevetésre miután a player egymás után 2x is az attack opciót választotta
+- állat healelése:
+    - ha a HP-ja utolsó 20%-ában van
+    - körönként max 3x tud healelni --> így nem lesz végtelen pingpongozás
+    - Ha a játékos a Heal opciót választotta ÉS a lény nem teljes életerőn van ÉS van még gyógyulási lehetősége --> az
+      állat is gyógyít.
+- egyébként a harc során az állat alapértelmezett reakciója a támadás
 
 - a kutya szerepét egyenlőre félre teszem, ha lesz rá időm megírom
 
