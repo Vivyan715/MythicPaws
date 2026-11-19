@@ -2,6 +2,8 @@
 
 ### &#x2605; **Story line:**
 
+========== bevezetés -> 1. scene =============
+
 - Az erdő közepén egy kis fa kuckóban élsz vadőrként.
 - Egy napon hazafelé tartva egy különleges lényre bukkansz. A levelek között egy cicához hasonlító lényt vélsz
   felfedezni, feltehetőleg kölyök. A hidegre való tekintettel ölbe veszed és hazaviszed.
@@ -14,14 +16,11 @@
 
 ----
 
-### &#x27A4; **1. döntés:**
+### **1. döntés --> Scene 1:**
 
-1.1. Felhívod a közeli sitnért és megszabadulsz az állattól (ide még ki kell találni hogyan tovább)
-
-1.2. A történtek ellenére továbbra is megosztod a vacsorád a macskával. Érdeklődést mutatsz a rejtélyes idegen felé, így
-befogadod.
-
-&#x27A4; **Ha az 1. lehetőséget választotta:**
+> 1.1. Felhívod a közeli sitnért és megszabadulsz az állattól (ide még ki kell találni hogyan tovább)
+ -------------- 
+**Ha az 1. lehetőséget választotta --> ennek egy része megy a harc ágba szövegnek:**
 
 - Úgy döntesz, nem kockáztatsz egy ilyen veszélyes és természetellenes lénnyel a házadban, ezért a békés közeledés
   helyett rátámadsz, hogy megszabadulj tőle.
@@ -30,7 +29,18 @@ befogadod.
   szuperképességgel próbál megvédeni magát.
 - Ha alulmaradsz a küzdelemben, a sérüléseid végzetesnek bizonyulnak a játék veszteséggel véget ér
 
-- Ha felülkerekedsz, végül sikerül legyőznöd és megölnöd a kiscicát, aki élettelenül terül el a padlón.
+-----------------------
+
+
+> 1.2. A történtek ellenére továbbra is megosztod a vacsorád a macskával. Érdeklődést mutatsz a rejtélyes idegen felé,
+> így
+> befogadod.
+
+### scene 2 --> aggresszív
+
+=== s1 lezárása ===
+
+- felülkerekedsz, végül sikerül legyőznöd és megölnöd a kiscicát, aki élettelenül terül el a padlón.
 - Bár megnyerted a harcot, a győzelem keserű ízt hagy maga után. egy kiszolgáltatott, kölyök állat vére tapad a
   kezedhez.
 - A küzdelem során szerzett sérüléseid megmaradnak.
@@ -42,10 +52,10 @@ befogadod.
 - Fizikailag és mentálisan kimerülve, fájdalmakkal telve roskadsz az ágyba.
 - A történtek annyira szürreálisak, hogy te magad is kezded megkérdőjelezni az elmédet...
 
------- **2. jelenet aggresszív vonal**
+=== s2 elkezdése ===
 
-Néhány nappal az incidens után a teraszon próbálsz pihenni, épp a kutyádat nyugtatod és adsz neki néhány apró
-jutalomfalatot. A bekötözött, égési sérülésekkel borított karod folyamatosan emlékeztet arra a szürreális éjszakára.
+- Néhány nappal az incidens után a teraszon próbálsz pihenni, épp a kutyádat nyugtatod és adsz neki néhány apró
+  jutalomfalatot. A bekötözött, égési sérülésekkel borított karod folyamatosan emlékeztet arra a szürreális éjszakára.
 
 - Hirtelen erős ágtörést hallasz a kert végi bokrok felől. A maradék falatokat gyorsan zsebre vágod, és felállsz.
 - A kutyád a zaj felé indul, de hirtelen megtorpan. Maga alá húzza a farkát, és halkan szűkölve hátrálni kezd.

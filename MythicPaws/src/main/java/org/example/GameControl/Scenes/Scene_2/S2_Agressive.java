@@ -6,6 +6,7 @@ import org.example.Combat.Battle;
 import org.example.Combat.BattleResult;
 import org.example.GameControl.GameSetting;
 import org.example.GameControl.Scenes.Scene_3.S3_Aggressive;
+import org.example.GameControl.Scenes.Scene_3.S3_Pacific;
 import org.example.GameControl.StartMenu;
 import org.example.GameControl.StoryState;
 import org.example.Player.Player;
@@ -13,21 +14,27 @@ import org.example.Tools.TextEffect;
 
 public class S2_Agressive implements StoryState {
 
-    private Creature kitten;
-    private Creature catashtrophe;
 
-    public S2_Agressive(Creature kitten) {
-        this.kitten = kitten;
+    private final Creature adultCat;
 
+    private final Player player;
+
+    public S2_Agressive() {
+        this.adultCat = new AdultCreatureFactory().createCatashtrophe();
+        this.player = GameSetting.getInstance().getPlayer();
     }
 
     @Override
     public void display() {
 
-        TextEffect.typeWriter("\nThe beast collapses lifelessly, but its body does not grow cold. Quite the opposite!\n", 40);
-        TextEffect.typeWriter("Upon his death, his energy is unleashed, and the unnatural heat radiating from his fur sets the carpet ablaze.\n", 40);
-        TextEffect.typeWriter("In the midst of chaos, your priorities change immediately: saving the house becomes your top priority.\n", 40);
-        TextEffect.typeWriter("However, while putting out the flames, you suffer severe second-degree burns on your hand and arm.\n", 40);
+        TextEffect.typeWriter("\nYou finally overpower the creature, leaving it lifeless on the floor.\nIt is a bitter victory—your wounds still throb, and the blood of a helpless cub is on your hands.\n", 70);
+        TextEffect.sleep(800);
+
+        TextEffect.typeWriter("\nBy the time animal control arrives, the body has vanished, leaving only a pile of hot ash.\nSeeing just a smoky room and your injured, disheveled state, they assume you are delusional and started the fire yourself—leaving you behind in anger.\n", 70);
+        TextEffect.sleep(800);
+
+        TextEffect.typeWriter("\nPhysically and mentally exhausted, you collapse into bed in the silent cabin.\nThe night was so surreal that you begin to question your own sanity...\n", 70);
+        TextEffect.sleep(800);
 
         TextEffect.typeWriter("\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~", 35);
 
@@ -37,6 +44,18 @@ public class S2_Agressive implements StoryState {
         System.out.println("     CHAPTER TWO     ");
         System.out.println("=====================");
 
+        TextEffect.typeWriter("\nA few days later, you sit on the terrace giving your dog some treats, your bandaged burns a constant reminder of that surreal night.\n", 70);
+        TextEffect.sleep(800);
+
+        TextEffect.typeWriter("\nSuddenly, a loud branch snaps in the bushes. You pocket the remaining treats as your dog freezes, tucking its tail and backing away with a low whine.\n", 70);
+        TextEffect.sleep(800);
+
+        TextEffect.typeWriter("\nKnowing it's trouble, you grab your shotgun—despite the pain in your injured hand—and step closer.\nFrom the foliage emerges a massive adult beast, its fur glowing a menacing red.\n", 70);
+        TextEffect.sleep(800);
+
+        TextEffect.typeWriter("\nIt sniffs the air and locks its eyes onto yours. You are certain it smells the ash of its fallen cub on you.\nIn the suffocating silence, the beast stands tense, waiting for your move. With the gun in your hand and the treats in your pocket, the choice is yours.\n", 70);
+        TextEffect.sleep(800);
+
     }
 
     @Override
@@ -44,21 +63,32 @@ public class S2_Agressive implements StoryState {
 
         if (choice == 1) {
             GameSetting.getInstance().addAggressiveChoice();
-//        itt hozom létre a macskát is és itt kérem le a playert is mivel csak ebben a döntésben van használva
-
-            Creature adultCat = new AdultCreatureFactory().createCatashtrophe();
-            Player player = GameSetting.getInstance().getPlayer();
 
             Battle battle = new Battle(player, adultCat);
             BattleResult result = battle.startBattle();
 
-            if (!result.isVictory()) return new StartMenu();
-            else return new S3_Aggressive();
+            if (!result.isVictory()) {
+                return new StartMenu();
+            } else {
+                player.addDeathList(adultCat);
+                return new S3_Aggressive();
+            }
 
 
+        } else if (choice == 2) {
+
+            TextEffect.typeWriter("\nYou lower your shotgun, slowly back away, and kneel with the treats in your outstretched hand.\nThe massive beast lets out a low, mournful growl, the red glow of its fur flickering with grief and rage.\n", 70);
+
+            TextEffect.typeWriter("\nFor a breathless moment, you expect it to strike. Instead, it senses no threat in your posture.\nCautiously, it steps forward, sniffs your trembling hand, and accepts the food.\n", 70);
+
+
+            TextEffect.typeWriter("\nThe fiery glow slowly fades. It will never forget what happened, but it understands your silent apology.\nWith one last piercing look, the mother turns and disappears into the forest—sparing you, and granting a fragile peace.\n", 70);
+
+
+            player.addFriend(adultCat);
+
+            return new S3_Pacific();
         }
-
-//        TODO: PACIFISTA FOLYTATÁS
 
 
         System.out.println("Incorrect answer! Please choose between [1] or [2].");

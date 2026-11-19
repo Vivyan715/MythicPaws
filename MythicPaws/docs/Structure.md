@@ -171,7 +171,7 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
 
 - játék mentés fájlba
 - egyedi exception megírása
-- kell egy lamda kifejezés ami a tárolásra és rendezésre szolgál --> erre az inventpry lenne a jó de ha nem lesz időm
-  ezt beleírni akkor keresek egy másik helyet ahol elhelyezhetem
+- a playernek lesz két listája ami a barátokat és a megölt állatokat tartalmazza --> S3-tól van jelentősége a szöveg
+  kiíratásához hogy milyen szöveget kapjon a pacifista és az aggresszív szövegekben
 - a teljes harc működésbe léptetése után minden állatnak külön heal, superpower és attack érték állítása
 - megírni a heal és a superpower alkalmazását

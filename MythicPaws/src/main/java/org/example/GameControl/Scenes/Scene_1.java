@@ -17,12 +17,15 @@ import org.example.Tools.TextEffect;
 public class Scene_1 implements StoryState {
 
     //    létrehozza a cica példányát
-    private Creature kitten;
+    private final Creature kitten;
+    private final Player player;   //attól h final a belső állapota változhat --> ezért lehet final
 
     public Scene_1() {
         CreatureFactory factory = new PuppyCreatureFactory();
         this.kitten = factory.createCatashtrophe();
         this.kitten.takeDamage(20); //mivel éhes és egyedül van
+
+        this.player = GameSetting.getInstance().getPlayer();
     }
 
     @Override
@@ -80,13 +83,17 @@ public class Scene_1 implements StoryState {
 
             GameSetting.getInstance().addAggressiveChoice();
 
-            Player player = GameSetting.getInstance().getPlayer();
+//            Player player = GameSetting.getInstance().getPlayer();
 
             Battle battle = new Battle(player, kitten);
             BattleResult result = battle.startBattle();
 
-            if (!result.isVictory()) return new StartMenu();
-            else return new S2_Agressive(kitten);
+            if (!result.isVictory()) {
+                return new StartMenu();
+            } else {
+                player.addDeathList(this.kitten);
+                return new S2_Agressive();
+            }
 
 
         } else if (choice == 2) {
@@ -103,6 +110,7 @@ public class Scene_1 implements StoryState {
             System.out.println(String.format("║  %-58s ║", "Current HP of " + this.kitten.getName() + " is: " + this.kitten.getHp() + " HP"));
             System.out.println("╚═════════════════════════════════════════════════════════════╝\n");
 
+            player.addFriend(kitten);
 
             return new S2_Pacific(kitten);
         }

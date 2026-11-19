@@ -2,12 +2,22 @@ package org.example.Player;
 
 //TODO: ADD INVENTORY
 
+
+import org.example.Animals.Creatures.Creature;
+
+import java.util.ArrayList;
+import java.util.List;
+
 public class Player {
 
     private int hp;
     private int attackPower;
 
     private int combatHeal;  //itt adja meg a heal amountot harc közben
+
+    private List<Creature> friends = new ArrayList<>();  //ide gyűjti az állat barátokat --> sztori vezérlés
+    private List<Creature> deathList = new ArrayList<>();
+    //ide gyűjti a megölt állatokat --> sztori vezérlés
 
     public Player() {
         this.hp = 100;
@@ -45,6 +55,22 @@ public class Player {
 
     public int getCombatHeal() {
         return combatHeal;
+    }
+
+    public List<Creature> getFriends() {
+        return friends;
+    }
+
+    public List<Creature> getDeathList() {
+        return deathList;
+    }
+
+    public void addFriend(Creature creature) {
+        friends.add(creature);
+    }
+
+    public void addDeathList(Creature creature) {
+        deathList.add(creature);
     }
 
 }

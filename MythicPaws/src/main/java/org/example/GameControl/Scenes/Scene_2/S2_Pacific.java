@@ -16,9 +16,15 @@ import org.example.Tools.TextEffect;
 
 public class S2_Pacific implements StoryState {
 
-    private Creature kitten;
+    private final Creature kitten;
+
+    private final Player player;
+
+    private final Creature adultCat;
 
     public S2_Pacific(Creature kitten) {
+        this.player = GameSetting.getInstance().getPlayer();
+        this.adultCat = new AdultCreatureFactory().createCatashtrophe();
         this.kitten = kitten;
     }
 
@@ -81,14 +87,17 @@ public class S2_Pacific implements StoryState {
             GameSetting.getInstance().addAggressiveChoice();
 //        itt hozom létre a macskát is és itt kérem le a playert is mivel csak ebben a döntésben van használva
 
-            Creature adultCat = new AdultCreatureFactory().createCatashtrophe();
-            Player player = GameSetting.getInstance().getPlayer();
+//            Creature adultCat = new AdultCreatureFactory().createCatashtrophe();
 
             Battle battle = new Battle(player, adultCat);
             BattleResult result = battle.startBattle();
 
-            if (!result.isVictory()) return new StartMenu();
-            else return new S3_Aggressive();
+            if (!result.isVictory()) {
+                return new StartMenu();
+            } else {
+                player.addDeathList(adultCat);
+                return new S3_Aggressive();
+            }
 
 
         } else if (choice == 2) {
@@ -104,7 +113,8 @@ public class S2_Pacific implements StoryState {
 
             TextEffect.typeWriter("You build them a shelter in your yard against the rain and cold weather, which they gladly make use of.\nYou share your food with them, though you aren't entirely sure what you should feed them. You mostly offer them raw meat.\n", 70);
 
-            return new S3_Pacific(kitten);
+            player.addFriend(adultCat);
+            return new S3_Pacific();
         }
 
         System.out.println("Incorrect answer! Please choose between [1] or [2].");
