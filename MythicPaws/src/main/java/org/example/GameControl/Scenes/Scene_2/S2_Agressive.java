@@ -56,6 +56,12 @@ public class S2_Agressive implements StoryState {
         TextEffect.typeWriter("\nIt sniffs the air and locks its eyes onto yours. You are certain it smells the ash of its fallen cub on you.\nIn the suffocating silence, the beast stands tense, waiting for your move. With the gun in your hand and the treats in your pocket, the choice is yours.\n", 70);
         TextEffect.sleep(800);
 
+        TextEffect.typeWriter("\nWhat do you want to do?", 70);
+        TextEffect.typeWriter("[1] Grab your shotgun and open fire on the beast.", 32);
+        TextEffect.typeWriter("[2] Slowly back away. Reaching into your pocket, you pull out a few dog treats, crouch down, and gently offer them to the creature.", 32);
+
+        TextEffect.typeWriter("========================================================================\n", 10);
+
     }
 
     @Override
@@ -76,6 +82,7 @@ public class S2_Agressive implements StoryState {
 
 
         } else if (choice == 2) {
+            GameSetting.getInstance().addPacifistChoice();
 
             TextEffect.typeWriter("\nYou lower your shotgun, slowly back away, and kneel with the treats in your outstretched hand.\nThe massive beast lets out a low, mournful growl, the red glow of its fur flickering with grief and rage.\n", 70);
 

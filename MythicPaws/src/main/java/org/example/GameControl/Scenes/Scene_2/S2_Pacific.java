@@ -85,9 +85,6 @@ public class S2_Pacific implements StoryState {
 
         if (choice == 1) {
             GameSetting.getInstance().addAggressiveChoice();
-//        itt hozom létre a macskát is és itt kérem le a playert is mivel csak ebben a döntésben van használva
-
-//            Creature adultCat = new AdultCreatureFactory().createCatashtrophe();
 
             Battle battle = new Battle(player, adultCat);
             BattleResult result = battle.startBattle();
