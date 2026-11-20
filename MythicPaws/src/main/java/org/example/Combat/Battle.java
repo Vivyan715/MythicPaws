@@ -86,15 +86,17 @@ public class Battle {
                 selectedAction = actionList.get(choice);
                 lastChoice = choice;
 
-                if (choice == 1) playerAttackCount++; //itt növeli ha a támadást választotta
+                if (choice == 1) playerAttackCount++; //itt növeli ha a támadást válsztotta
 
                 else playerAttackCount = 0; //ha bármi mást akkor lenullázom, hogy az egymás utáni támadásokat számolja
 
                 if (selectedAction == null) {
-                    TextEffect.typeWriter("Invalid option! Please choose [1], [2] or [3]!\n", 30);
+                    throw new InvalidCombatActionException("Invalid action: [" + choice + "]. Valid actions are [1] Attack, [2] Defend, [3] Heal.");
                 }
             } catch (NumberFormatException e) {
                 System.out.println("Please enter a number!");
+            } catch (InvalidCombatActionException e) {
+                TextEffect.typeWriter(e.getMessage() + "\n", 30);
             }
         }
 
