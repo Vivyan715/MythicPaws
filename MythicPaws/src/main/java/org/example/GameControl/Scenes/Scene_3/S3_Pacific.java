@@ -11,6 +11,8 @@ import org.example.GameControl.StoryState;
 import org.example.Player.Player;
 import org.example.Tools.TextEffect;
 
+import java.util.Scanner;
+
 public class S3_Pacific implements StoryState {
 
 //    private final Creature kitten;
@@ -63,8 +65,25 @@ public class S3_Pacific implements StoryState {
     public StoryState handleChoice(int choice) {
 
         if (choice == 1) {
+            TextEffect.typeWriter("\nOnce your brain processes what it just saw, you back away in sheer panic and shout for your dog.\n", 70);
+            TextEffect.typeWriter("Your screaming startles the pig—it vanishes again, letting out a deafening, invisible squeal as chaos erupts!\n", 70);
+
 
             GameSetting.getInstance().addAggressiveChoice();
+
+            if (player.getHp() < 40) {
+                TextEffect.typeWriter("\nYour wounds from the previous fight are throbbing painfully (Current HP: " + player.getHp() + "/100).\n", 50);
+                TextEffect.typeWriter("Do you want to use a first-aid kit to bandage your wounds before engaging? [1] Yes  [2] No: ", 30);
+
+                Scanner sc = new Scanner(System.in);
+                String healChoice = sc.nextLine();
+
+                if (healChoice.equals("1")) {
+                    player.heal(25);
+
+                    TextEffect.typeWriter("You quickly patched yourself up. HP restored to: " + player.getHp() + "/100!\n", 40);
+                }
+            }
 
             Battle battle = new Battle(player, piggy);
             BattleResult result = battle.startBattle();

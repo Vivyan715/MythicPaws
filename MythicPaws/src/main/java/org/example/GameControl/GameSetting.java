@@ -63,6 +63,7 @@ public class GameSetting {
     public void resetGame() {
         this.pacifistChoices = 0;
         this.aggressiveChoices = 0;
+        this.player = new Player();
     }
 
 

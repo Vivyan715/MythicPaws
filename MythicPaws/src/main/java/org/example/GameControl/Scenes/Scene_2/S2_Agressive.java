@@ -12,6 +12,8 @@ import org.example.GameControl.StoryState;
 import org.example.Player.Player;
 import org.example.Tools.TextEffect;
 
+import java.util.Scanner;
+
 public class S2_Agressive implements StoryState {
 
 
@@ -69,6 +71,20 @@ public class S2_Agressive implements StoryState {
 
         if (choice == 1) {
             GameSetting.getInstance().addAggressiveChoice();
+
+            if (player.getHp() < 40) {
+                TextEffect.typeWriter("\nYour wounds from the previous fight are throbbing painfully (Current HP: " + player.getHp() + "/100).\n", 50);
+                TextEffect.typeWriter("Do you want to use a first-aid kit to bandage your wounds before engaging? [1] Yes  [2] No: ", 30);
+
+                Scanner sc = new Scanner(System.in);
+                String healChoice = sc.nextLine();
+
+                if (healChoice.equals("1")) {
+                    player.heal(25);
+
+                    TextEffect.typeWriter("You quickly patched yourself up. HP restored to: " + player.getHp() + "/100!\n", 40);
+                }
+            }
 
             Battle battle = new Battle(player, adultCat);
             BattleResult result = battle.startBattle();
