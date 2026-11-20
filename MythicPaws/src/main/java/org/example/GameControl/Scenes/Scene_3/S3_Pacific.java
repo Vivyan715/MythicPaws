@@ -34,7 +34,7 @@ public class S3_Pacific implements StoryState {
         System.out.println("     CHAPTER THREE     ");
         System.out.println("=====================");
 
-        if (player.getDeathList().isEmpty()) {
+        if (!player.getDeathList().isEmpty()) {
             TextEffect.typeWriter("\nDays pass in uneasy quiet. As a silent peace offering, you leave a bowl of food at the edge of the yard each morning.\n", 70);
             TextEffect.sleep(800);
             TextEffect.typeWriter("Today, the clearing seems completely empty. Munching on an apple, you set the bowl down and turn to leave...\n", 70);
