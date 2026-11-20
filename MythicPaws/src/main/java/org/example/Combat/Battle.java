@@ -187,8 +187,5 @@ public class Battle {
     public void setDefending(boolean isDefending) {
         this.isDefending = isDefending;
     }
-
-    public boolean isDefending() {
-        return isDefending;
-    }
+    
 }

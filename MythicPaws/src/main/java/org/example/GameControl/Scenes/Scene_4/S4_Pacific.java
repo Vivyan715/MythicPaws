@@ -5,7 +5,6 @@ import org.example.Animals.Factories.AdultCreatureFactory;
 import org.example.Combat.Battle;
 import org.example.Combat.BattleResult;
 import org.example.GameControl.GameSetting;
-import org.example.GameControl.Scenes.Scene_3.S3_Aggressive;
 import org.example.GameControl.Scenes.Scene_5.S5_Aggressive;
 import org.example.GameControl.Scenes.Scene_5.S5_Pacific;
 import org.example.GameControl.StartMenu;

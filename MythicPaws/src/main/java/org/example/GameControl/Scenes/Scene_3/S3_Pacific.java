@@ -5,6 +5,7 @@ import org.example.Animals.Factories.AdultCreatureFactory;
 import org.example.Combat.Battle;
 import org.example.Combat.BattleResult;
 import org.example.GameControl.GameSetting;
+import org.example.GameControl.Scenes.Scene_2.S2_Agressive;
 import org.example.GameControl.Scenes.Scene_4.S4_Pacific;
 import org.example.GameControl.StartMenu;
 import org.example.GameControl.StoryState;
@@ -92,7 +93,7 @@ public class S3_Pacific implements StoryState {
                 return new StartMenu();
             } else {
                 player.addDeathList(piggy);
-                return new S3_Aggressive();
+                return new S2_Agressive();
             }
 
 

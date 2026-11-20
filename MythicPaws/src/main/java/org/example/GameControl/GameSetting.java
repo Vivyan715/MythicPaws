@@ -9,7 +9,7 @@ public class GameSetting {
 
     //    player és a kutya példánya
     private Player player;
-    private Dog dog;
+    private final Dog dog;
 
 
     private int pacifistChoices = 0;

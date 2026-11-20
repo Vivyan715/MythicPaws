@@ -1,7 +1,7 @@
 package org.example.GameControl;
 
 import org.example.GameControl.Scenes.Scene_1;
-import org.example.Tools.AsciiArt;
+
 
 public class StartMenu implements StoryState {
 
@@ -27,7 +27,8 @@ public class StartMenu implements StoryState {
     @Override
     public StoryState handleChoice(int choice) {
         if (choice == 1) {
-            return new Scene_1();   // Enters the first scene
+            GameSetting.getInstance().resetGame();
+            return new Scene_1();
         } else if (choice == 2) {
             System.out.println("\n╔═════════════════════════════════════════════════════════════╗");
             System.out.println("║  Oh, you are already leaving? Alright.                      ║");
