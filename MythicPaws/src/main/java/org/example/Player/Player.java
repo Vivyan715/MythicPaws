@@ -40,7 +40,7 @@ public class Player {
         if (amount <= 0) {
             return;
         }
-        
+
         this.hp -= amount;
 
         if (this.hp <= 0) {
@@ -79,4 +79,12 @@ public class Player {
         deathList.add(creature);
     }
 
+    public void setHp(int hp) {
+        this.hp = hp;
+    }
+
+    public void clearLists() {
+        this.friends.clear();
+        this.deathList.clear();
+    }
 }

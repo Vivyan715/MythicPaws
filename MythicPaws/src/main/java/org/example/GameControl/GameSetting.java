@@ -66,5 +66,11 @@ public class GameSetting {
         this.player = new Player();
     }
 
+    public void setPacifistChoices(int pacifistChoices) {
+        this.pacifistChoices = pacifistChoices;
+    }
 
+    public void setAggressiveChoices(int aggressiveChoices) {
+        this.aggressiveChoices = aggressiveChoices;
+    }
 }

@@ -8,6 +8,7 @@ import org.example.GameControl.GameSetting;
 import org.example.GameControl.Scenes.Closing_Scene;
 import org.example.GameControl.StartMenu;
 import org.example.GameControl.StoryState;
+import org.example.Persistence.SaveManager;
 import org.example.Player.Player;
 import org.example.Tools.InputHandler;
 import org.example.Tools.TextEffect;
@@ -45,7 +46,7 @@ public class S5_Aggressive implements StoryState {
         TextEffect.typeWriter("[1] Enough is enough—raise your weapon and attack before it vanishes again!\n", 32);
 
         TextEffect.typeWriter("[2] Stop, lower your weapon, and let it eat from the garden in peace.\n", 32);
-
+        TextEffect.typeWriter("[3] Save game and exit.\n", 32);
         TextEffect.typeWriter("========================================================================\n", 10);
 
     }
@@ -97,6 +98,15 @@ public class S5_Aggressive implements StoryState {
             GameSetting.getInstance().addPacifistChoice();
 
             return new Closing_Scene();
+        } else if (choice == 3) {
+
+            SaveManager.GameSaver(this);
+
+            System.out.println("\n=================================================");
+            System.out.println("  Game saved successfully! See you next time!   ");
+            System.out.println("=================================================\n");
+
+            System.exit(0);
         }
 
 

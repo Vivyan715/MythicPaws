@@ -9,6 +9,7 @@ import org.example.GameControl.Scenes.Scene_5.S5_Aggressive;
 import org.example.GameControl.Scenes.Scene_5.S5_Pacific;
 import org.example.GameControl.StartMenu;
 import org.example.GameControl.StoryState;
+import org.example.Persistence.SaveManager;
 import org.example.Player.Player;
 import org.example.Tools.InputHandler;
 import org.example.Tools.TextEffect;
@@ -53,7 +54,7 @@ public class S4_Pacific implements StoryState {
         TextEffect.typeWriter("[1] Refuse to let it wreck your cabin—grab your weapon and attack!\n", 32);
 
         TextEffect.typeWriter("[2] Crouch down on the threshold and offer a piece of food to show you mean no harm.\n", 32);
-
+        TextEffect.typeWriter("[3] Save game and exit.\n", 32);
         TextEffect.typeWriter("========================================================================\n", 10);
 
     }
@@ -102,6 +103,15 @@ public class S4_Pacific implements StoryState {
             GameSetting.getInstance().addPacifistChoice();
 
             return new S5_Pacific();
+        } else if (choice == 3) {
+
+            SaveManager.GameSaver(this);
+
+            System.out.println("\n=================================================");
+            System.out.println("  Game saved successfully! See you next time!   ");
+            System.out.println("=================================================\n");
+
+            System.exit(0);
         }
 
 

@@ -10,6 +10,7 @@ import org.example.GameControl.Scenes.Scene_2.S2_Agressive;
 import org.example.GameControl.Scenes.Scene_2.S2_Pacific;
 import org.example.GameControl.StartMenu;
 import org.example.GameControl.StoryState;
+import org.example.Persistence.SaveManager;
 import org.example.Player.Player;
 import org.example.Tools.AsciiArt;
 import org.example.Tools.TextEffect;
@@ -68,6 +69,7 @@ public class Scene_1 implements StoryState {
 
         TextEffect.typeWriter("[1] Call the animal control / get rid of the beast", 32);
         TextEffect.typeWriter("[2] Share your dinner and take care of it\n", 32);
+        TextEffect.typeWriter("[3] Save game and exit.\n", 32);
         AsciiArt.drawCat();
 
     }
@@ -113,6 +115,15 @@ public class Scene_1 implements StoryState {
             player.addFriend(kitten);
 
             return new S2_Pacific(kitten);
+        } else if (choice == 3) {
+
+            SaveManager.GameSaver(this);
+
+            System.out.println("\n=================================================");
+            System.out.println("  Game saved successfully! See you next time!   ");
+            System.out.println("=================================================\n");
+
+            System.exit(0);
         }
 
         System.out.println("Incorrect answer! Please choose between [1] or [2].");

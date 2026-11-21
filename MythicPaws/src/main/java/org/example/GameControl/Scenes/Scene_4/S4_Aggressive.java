@@ -9,6 +9,7 @@ import org.example.GameControl.Scenes.Scene_5.S5_Aggressive;
 import org.example.GameControl.Scenes.Scene_5.S5_Pacific;
 import org.example.GameControl.StartMenu;
 import org.example.GameControl.StoryState;
+import org.example.Persistence.SaveManager;
 import org.example.Player.Player;
 import org.example.Tools.InputHandler;
 import org.example.Tools.TextEffect;
@@ -44,7 +45,7 @@ public class S4_Aggressive implements StoryState {
         TextEffect.typeWriter("[1] Raise your weapon and attack before it ruins the rest of your supplies!\n", 32);
 
         TextEffect.typeWriter("[2] Lower your guard, crouch down, and toss it a piece of meat to stop the bloodshed.\n", 32);
-
+        TextEffect.typeWriter("[3] Save game and exit.\n", 32);
         TextEffect.typeWriter("========================================================================\n", 10);
     }
 
@@ -91,6 +92,15 @@ public class S4_Aggressive implements StoryState {
 
             return new S5_Pacific();
 
+        } else if (choice == 3) {
+
+            SaveManager.GameSaver(this);
+
+            System.out.println("\n=================================================");
+            System.out.println("  Game saved successfully! See you next time!   ");
+            System.out.println("=================================================\n");
+
+            System.exit(0);
         }
 
         System.out.println("Incorrect answer! Please choose between [1] or [2].");

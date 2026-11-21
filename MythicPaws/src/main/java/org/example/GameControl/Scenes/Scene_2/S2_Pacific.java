@@ -10,6 +10,7 @@ import org.example.GameControl.Scenes.Scene_3.S3_Aggressive;
 import org.example.GameControl.Scenes.Scene_3.S3_Pacific;
 import org.example.GameControl.StartMenu;
 import org.example.GameControl.StoryState;
+import org.example.Persistence.SaveManager;
 import org.example.Player.Player;
 import org.example.Tools.AsciiArt;
 import org.example.Tools.TextEffect;
@@ -75,7 +76,7 @@ public class S2_Pacific implements StoryState {
         TextEffect.typeWriter("\nWhat do you want to do?", 70);
         TextEffect.typeWriter("[1] Grab your shotgun and open fire on the beast.", 32);
         TextEffect.typeWriter("[2] Slowly back away. Reaching into your pocket, you pull out a few dog treats, crouch down, and gently offer them to the creature.", 32);
-
+        TextEffect.typeWriter("[3] Save game and exit.\n", 32);
         TextEffect.typeWriter("========================================================================\n", 10);
 
     }
@@ -112,6 +113,15 @@ public class S2_Pacific implements StoryState {
 
             player.addFriend(adultCat);
             return new S3_Pacific();
+        } else if (choice == 3) {
+
+            SaveManager.GameSaver(this);
+
+            System.out.println("\n=================================================");
+            System.out.println("  Game saved successfully! See you next time!   ");
+            System.out.println("=================================================\n");
+
+            System.exit(0);
         }
 
         System.out.println("Incorrect answer! Please choose between [1] or [2].");
