@@ -5,7 +5,7 @@ import java.io.IOException;
 public class TextEffect {
 
 
-    //PROBLÉMA: amikor entert ütök hogy felgyorsítsam a szöveg kiírását akkor ugyanúgy "karakternek" érzékeli az entert, kezd egy új sort majd kiírja a maradékot
+    //PROBLÉMA: amikor entert ütök hogy felgyorsítsam a szöveg kiírását akkor ugyanúgy "karakternek" érzékeli az entert, kezd egy új sort majd kiírja a maradékot --> MÉG MINDIG NEM JÓ
 
     /*
      * MEGOLDÁS:
