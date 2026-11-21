@@ -26,11 +26,13 @@ public class Player {
     }
 
     public void heal(int amount) {
-        if (this.hp < 100) {
-            this.hp += amount;
-        } else {
+        if (this.hp >= 100) {
             System.out.println("You're already healed!");
             this.hp = 100;
+        } else if ((this.hp + amount) > 100) {
+            this.hp = 100;
+        } else {
+            this.hp += amount;
         }
     }
 
