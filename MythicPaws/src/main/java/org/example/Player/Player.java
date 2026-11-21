@@ -37,11 +37,15 @@ public class Player {
     }
 
     public void takeDamage(int amount) {
-        if (hp > 0) this.hp -= amount;
-        else this.hp = 0;
+        if (amount <= 0) {
+            return;
+        }
+        
+        this.hp -= amount;
 
-        if (this.hp < 0) this.hp = 0;
-        // TODO: GAME OVER
+        if (this.hp <= 0) {
+            this.hp = 0;
+        }
     }
 
 //    GETTER ÉS SETTER
