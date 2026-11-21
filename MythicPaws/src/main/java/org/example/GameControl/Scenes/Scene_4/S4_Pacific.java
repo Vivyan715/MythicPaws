@@ -29,9 +29,9 @@ public class S4_Pacific implements StoryState {
 
 
         if (!player.getDeathList().isEmpty()) {
-            TextEffect.typeWriter("\nThough the weight of your past actions still lingers, sparing the little pig feels like the first real step toward making things right.\n", 70);
+            TextEffect.typeWriter("\nThough the weight of your past actions still lingers, sparing the \nlittle pig feels like the first real step toward making things right.\n", 70);
         } else {
-            TextEffect.typeWriter("\nThe small clearing around your cabin is slowly turning into a peaceful sanctuary where these strange creatures finally feel safe.\n", 70);
+            TextEffect.typeWriter("\nThe small clearing around your cabin is slowly turning into a\n peaceful sanctuary where these strange creatures finally feel safe.\n", 70);
         }
         TextEffect.sleep(800);
 
@@ -42,11 +42,11 @@ public class S4_Pacific implements StoryState {
 
         TextEffect.typeWriter("\nThe next morning, you try to head outside, only to find the doorknob freezing cold and the lock completely iced over.\n", 70);
 
-        TextEffect.typeWriter("Peering through the window, you spot the culprit: a snow-white ferret darting across the porch steps, leaving a thick trail of frost wherever its paws touch the wood.\n", 70);
+        TextEffect.typeWriter("Peering through the window, you spot the culprit:\n a snow-white ferret darting across the porch steps, leaving a thick trail of\n frost wherever its paws touch the wood.\n", 70);
 
         TextEffect.sleep(1000);
 
-        TextEffect.typeWriter("\nAfter forcing the frozen door open, the creature doesn't run away—instead, it turns to face you and lets out a sharp hiss.\n", 70);
+        TextEffect.typeWriter("\nAfter forcing the frozen door open, the creature doesn't\n run away—instead, it turns to face you and lets out a sharp hiss.\n", 70);
         TextEffect.sleep(1000);
 
         TextEffect.typeWriter("\nWhat do you want to do?\n", 70);
@@ -63,9 +63,9 @@ public class S4_Pacific implements StoryState {
     public StoryState handleChoice(int choice) {
 
         if (choice == 1) {
-            TextEffect.typeWriter("\nYou refuse to let this little menace freeze your home. Grabbing your weapon, you lunge forward!\n", 70);
+            TextEffect.typeWriter("\nYou refuse to let this little menace freeze your home.\n Grabbing your weapon, you lunge forward!\n", 70);
 
-            TextEffect.typeWriter("The ferret puffs up, its fur coated in frost, and with a piercing hiss, it darts straight at you!\n", 70);
+            TextEffect.typeWriter("The ferret puffs up, its fur coated in frost, and \nwith a piercing hiss, it darts straight at you!\n", 70);
 
             GameSetting.getInstance().addAggressiveChoice();
 

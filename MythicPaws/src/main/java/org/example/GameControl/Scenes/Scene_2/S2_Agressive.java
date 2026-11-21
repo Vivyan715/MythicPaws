@@ -60,7 +60,7 @@ public class S2_Agressive implements StoryState {
 
         TextEffect.typeWriter("\nWhat do you want to do?", 70);
         TextEffect.typeWriter("[1] Grab your shotgun and open fire on the beast.", 32);
-        TextEffect.typeWriter("[2] Slowly back away. Reaching into your pocket, you pull out a few dog treats, crouch down, and gently offer them to the creature.", 32);
+        TextEffect.typeWriter("[2] Slowly back away.\n Reaching into your pocket, you pull out a few dog treats, crouch down, and gently offer them to the creature.", 32);
         TextEffect.typeWriter("[3] Save game and exit.\n", 32);
         TextEffect.typeWriter("========================================================================\n", 10);
 

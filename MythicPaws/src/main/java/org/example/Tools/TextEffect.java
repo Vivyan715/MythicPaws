@@ -5,7 +5,17 @@ import java.io.IOException;
 public class TextEffect {
 
 
-    //TODO: ezt optimalizálni --> amikor megy a szöveg akkor ugyan kiírja a teljes sor tartalmát de közben a konzolon le lesz ütve egy enter --> undertale szerűen kellene működnie
+    //PROBLÉMA: amikor entert ütök hogy felgyorsítsam a szöveg kiírását akkor ugyanúgy "karakternek" érzékeli az entert, kezd egy új sort majd kiírja a maradékot
+
+    /*
+     * MEGOLDÁS:
+     * ---------
+     * - ANSI escape kód --> ezzel tudom neki megmondani hogy vissza akarok lépni egy sorral feljebb és itt folytassa a kiírást --> \u001b[1A
+     * \r --> ez a sor elején fogja kezdeni
+     *
+     * \u001b[<X>C --> lépjen jobbra annyi betűt ami ki volt már írva
+     *
+     * */
     public static boolean FAST_MODE = false;
 
     public static void sleep(int milliseconds) {
@@ -44,6 +54,21 @@ public class TextEffect {
                 // enter lenyomására kiírja az egész szöveget
                 if (System.in.available() > 0) {
                     clearInputBuffer();
+
+//                    itt számolja hány k. volt már kiírva
+                    int lastNewline = text.lastIndexOf('\n', i - 1);
+
+                    int charsOnLine = (lastNewline == -1) ? i : (i - 1 - lastNewline);
+
+//                    itt vonja vissza az entert és a sor elejére áll
+                    System.out.print("\u001b[1A\r");
+
+                    if (charsOnLine > 0) {
+//                        ha nem a sor elején állt akkor behúz annyit amennyi szöveg ki volt írva
+                        System.out.print("\u001b[" + charsOnLine + "C");
+                    }
+
+//                    itt ahogy korábban folytatja majd a kiírást
                     System.out.print(text.substring(i));
                     break;
                 }

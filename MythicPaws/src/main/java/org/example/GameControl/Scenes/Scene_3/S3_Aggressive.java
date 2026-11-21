@@ -28,19 +28,19 @@ public class S3_Aggressive implements StoryState {
     public void display() {
 
         if (player.getDeathList().size() < 2) {
-            TextEffect.typeWriter("\nThe massive mother looks at you one last time—not with anger, but with painful disbelief—before her flames die out and she collapses into glowing ash at your feet.\n", 70);
-            TextEffect.typeWriter("Behind her, the kitten lets out a desperate whimper. The trust you earned yesterday shatters in an instant, and the tiny creature flees in terror into the deep woods.\n", 70);
+            TextEffect.typeWriter("\nThe massive mother looks at you one last time—not with anger,\n but with painful disbelief—before her flames die out and she collapses into glowing ash at your feet.\n", 70);
+            TextEffect.typeWriter("Behind her, the kitten lets out a desperate whimper.\n The trust you earned yesterday shatters in an instant, and the tiny creature flees in terror into the deep woods.\n", 70);
             TextEffect.sleep(800);
 
             TextEffect.typeWriter("\nYou stand in the sudden, unnatural silence, a smoking shotgun in your hands.\n", 70);
-            TextEffect.typeWriter("Even your dog refuses to come near you—and for the first time, it hits you: you weren't defending yourself against monsters. You became one.\n", 70);
+            TextEffect.typeWriter("Even your dog refuses to come near you—and for the first time,\n it hits you: you weren't defending yourself against monsters. You became one.\n", 70);
             TextEffect.sleep(800);
         } else {
-            TextEffect.typeWriter("\nThe massive beast finally collapses onto the grass, leaving behind nothing more than another pile of hot ash drifting into the wind—just like the one its cub left on your living room floor.\n", 60);
+            TextEffect.typeWriter("\nThe massive beast finally collapses onto the grass, leaving behind nothing more than another pile of\n hot ash drifting into the wind—just like the one its cub left on your living room floor.\n", 60);
             TextEffect.sleep(2000);
 
             TextEffect.typeWriter("\nExhausted, bleeding, and heavy-hearted, you drag yourself back inside the cabin.\n", 60);
-            TextEffect.typeWriter("The forest around you has fallen dead silent, and you can feel it in your bones: whatever lives out here does not forget, and this bloodshed has only just begun.\n", 60);
+            TextEffect.typeWriter("The forest around you has fallen dead silent, and you can feel it\n in your bones: whatever lives out here does not forget, and this bloodshed has only just begun.\n", 60);
             TextEffect.sleep(2000);
         }
 

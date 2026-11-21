@@ -28,9 +28,9 @@ public class S5_Pacific implements StoryState {
 
 
         if (!player.getDeathList().isEmpty()) {
-            TextEffect.typeWriter("\nAs the white ferret peacefully nibbles on the food, the tension inside you eases a little more—maybe it isn't too late to make up for your past mistakes.\n", 70);
+            TextEffect.typeWriter("\nAs the white ferret peacefully nibbles on the food,\n the tension inside you eases a little more—maybe it isn't too late to make up for your past mistakes.\n", 70);
         } else {
-            TextEffect.typeWriter("\nA whole little gathering of strange creatures has now formed around your cabin, each one clearly trusting you.\n", 70);
+            TextEffect.typeWriter("\nA whole little gathering of strange creatures has now\n formed around your cabin, each one clearly trusting you.\n", 70);
         }
         TextEffect.sleep(1000);
 
@@ -39,8 +39,8 @@ public class S5_Pacific implements StoryState {
         System.out.println("=====================");
 
 
-        TextEffect.typeWriter("\nAt dusk, you are checking your small vegetable garden beside the cabin when you notice a silent, dark shadow slipping right through the gaps in the fence—even though nothing is casting it.\n", 70);
-        TextEffect.typeWriter("The moment the porch light hits it, the shadow suddenly takes physical form: a pitch-black rabbit stands on the soil before you, watching your reaction tensely.\n", 70);
+        TextEffect.typeWriter("\nAt dusk, you are checking your small vegetable garden beside the cabin when\n you notice a silent, dark shadow slipping right\n through the gaps in the fence—even though nothing is casting it.\n", 70);
+        TextEffect.typeWriter("The moment the porch light hits it, the shadow suddenly takes physical form:\n a pitch-black rabbit stands on the soil before you, watching your reaction tensely.\n", 70);
         TextEffect.sleep(1000);
 
         TextEffect.typeWriter("\nWhat do you want to do?\n", 70);

@@ -31,9 +31,9 @@ public class S4_Aggressive implements StoryState {
         System.out.println("=====================");
 
 
-        TextEffect.typeWriter("\nAfter the chaotic fight with the invisible pig, you head over to check your rainwater barrel and your dog's water bowl—only to find both frozen solid, even though it isn't winter.\n", 70);
+        TextEffect.typeWriter("\nAfter the chaotic fight with the invisible pig, you head over to check your\n rainwater barrel and your dog's water bowl—only to find both frozen solid, even though it isn't winter.\n", 70);
 
-        TextEffect.typeWriter("Balancing on the rim of the barrel is a snow-white ferret. As it leaps down, a thick trail of frost instantly forms on the wooden planks beneath its paws.\n", 70);
+        TextEffect.typeWriter("Balancing on the rim of the barrel is a snow-white ferret.\n As it leaps down, a thick trail of frost instantly forms on the wooden planks beneath its paws.\n", 70);
 
         TextEffect.sleep(1000);
 

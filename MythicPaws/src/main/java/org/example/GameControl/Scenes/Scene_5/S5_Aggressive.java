@@ -26,7 +26,7 @@ public class S5_Aggressive implements StoryState {
     @Override
     public void display() {
 
-        TextEffect.typeWriter("\nThe frost ferret collapses onto the grass, the ice slowly melting around it. Standing in the quiet yard with your weapon in hand, you no longer wonder why these creatures are coming—you just wait to see what emerges from the dark next.\n", 70);
+        TextEffect.typeWriter("\nThe frost ferret collapses onto the grass, the ice slowly melting around it.\n Standing in the quiet yard with your weapon in hand, you no longer wonder why these creatures \nare coming—you just wait to see what emerges from the dark next.\n", 70);
 
         TextEffect.sleep(1000);
 
@@ -35,9 +35,9 @@ public class S5_Aggressive implements StoryState {
         System.out.println("=====================");
 
 
-        TextEffect.typeWriter("\nAt dusk, you patrol your property with your weapon ready when you spot a silent, dark shadow slipping right through the fence slats of your vegetable garden.\n", 70);
+        TextEffect.typeWriter("\nAt dusk, you patrol your property with your weapon ready when you spot a silent,\n dark shadow slipping right through the fence slats of your vegetable garden.\n", 70);
 
-        TextEffect.typeWriter("As the beam of the porch light hits it, the shadow suddenly takes physical form: a pitch-black rabbit stands in the mud before you, tensed and watching your every move.\n", 70);
+        TextEffect.typeWriter("As the beam of the porch light hits it, the shadow suddenly\n takes physical form: a pitch-black rabbit stands in the mud before you, tensed and watching your every move.\n", 70);
 
         TextEffect.sleep(1000);
 
@@ -55,7 +55,7 @@ public class S5_Aggressive implements StoryState {
     public StoryState handleChoice(int choice) {
         if (choice == 1) {
 
-            TextEffect.typeWriter("\nYou're done letting these freaks creep onto your land. Raising your weapon, you charge straight at it!\n", 70);
+            TextEffect.typeWriter("\nYou're done letting these freaks creep onto your land.\n Raising your weapon, you charge straight at it!\n", 70);
 
             TextEffect.typeWriter("The black rabbit flattens its ears, dark energy swirling around its paws as it lunges to defend itself!\n", 70);
 
@@ -90,7 +90,7 @@ public class S5_Aggressive implements StoryState {
 
             TextEffect.typeWriter("\nExhausted by the endless bloodshed, you pause, lower your weapon, and step back from the garden bed.\n", 70);
 
-            TextEffect.typeWriter("Sensing no threat, the black rabbit slowly relaxes and begins nibbling on a carrot in the warm glow of the porch light.\n", 70);
+            TextEffect.typeWriter("Sensing no threat, the black rabbit slowly\n relaxes and begins nibbling on a carrot in the warm glow of the porch light.\n", 70);
             TextEffect.sleep(1000);
 
             player.addFriend(bunny);
