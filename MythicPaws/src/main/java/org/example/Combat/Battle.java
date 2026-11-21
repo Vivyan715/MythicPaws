@@ -2,17 +2,16 @@ package org.example.Combat;
 
 import org.example.Animals.Creatures.Creature;
 import org.example.Player.Player;
+import org.example.Tools.InputHandler;
 import org.example.Tools.TextEffect;
 
 import java.util.HashMap;
 import java.util.Map;
-import java.util.Scanner;
 
 public class Battle {
     // protected --> így a package-en belül elérik a leszármazott osztályok a változókat
     protected Player player;
     protected Creature creature;
-    protected Scanner input;
     protected boolean isDefending;
     protected Map<Integer, CombatAction> actionList;
 
@@ -24,7 +23,6 @@ public class Battle {
     public Battle(Player player, Creature creature) {
         this.player = player;
         this.creature = creature;
-        this.input = new Scanner(System.in);
         this.isDefending = false;
 
         this.actionList = new HashMap<>();
@@ -82,7 +80,7 @@ public class Battle {
             int choice;
 
             try {
-                choice = Integer.parseInt(input.nextLine());
+                choice = InputHandler.readInt();
                 selectedAction = actionList.get(choice);
                 lastChoice = choice;
 
@@ -165,7 +163,6 @@ public class Battle {
         System.out.println("You took " + baseDamage + " damage!");
     }
 
-    // ezeket a jelenetkhez lehet igazítani
     protected void BattleStart() {
     }  // harc elkezdése
 
@@ -187,5 +184,5 @@ public class Battle {
     public void setDefending(boolean isDefending) {
         this.isDefending = isDefending;
     }
-    
+
 }

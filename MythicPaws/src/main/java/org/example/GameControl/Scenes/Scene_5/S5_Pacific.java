@@ -9,9 +9,8 @@ import org.example.GameControl.Scenes.Closing_Scene;
 import org.example.GameControl.StartMenu;
 import org.example.GameControl.StoryState;
 import org.example.Player.Player;
+import org.example.Tools.InputHandler;
 import org.example.Tools.TextEffect;
-
-import java.util.Scanner;
 
 public class S5_Pacific implements StoryState {
 
@@ -64,8 +63,7 @@ public class S5_Pacific implements StoryState {
                 TextEffect.typeWriter("\nYour wounds from the previous fight are throbbing painfully (Current HP: " + player.getHp() + "/100).\n", 50);
                 TextEffect.typeWriter("Do you want to use a first-aid kit to bandage your wounds before engaging? [1] Yes  [2] No: ", 30);
 
-                Scanner sc = new Scanner(System.in);
-                String healChoice = sc.nextLine();
+                String healChoice = InputHandler.readLine();
 
                 if (healChoice.equals("1")) {
                     player.heal(25);
