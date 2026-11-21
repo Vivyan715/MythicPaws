@@ -167,11 +167,68 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
 
 - a kutya szerepét egyenlőre félre teszem, ha lesz rá időm megírom
 
-### Hátralévő TODO
+---
 
-- játék mentés fájlba
-- egyedi exception megírása
-- a playernek lesz két listája ami a barátokat és a megölt állatokat tartalmazza --> S3-tól van jelentősége a szöveg
-  kiíratásához hogy milyen szöveget kapjon a pacifista és az aggresszív szövegekben
-- a teljes harc működésbe léptetése után minden állatnak külön heal, superpower és attack érték állítása
-- megírni a heal és a superpower alkalmazását
+## Megvalósított új funkciók és komponensek
+
+### Perzisztencia réteg (`Persistence` csomag)
+
+- **Mentéskezelő (`SaveManager` - `org.example.Persistence`):**
+    - Felelősség: az aktuális játékállapot fájlba mentése és visszatöltése a `savedGame.txt` fájl használatával.
+    - Biztonságos erőforrás-kezelés: a követelményeknek megfelelően `try-with-resources` szerkezettel (`BufferedWriter`
+      és `BufferedReader`), megelőzve az erőforrás-szivárgást.
+    - **Mentett állapotok:**
+        - Aktuális fejezet/jelenet osztályneve (`SCENE`)
+        - Játékos aktuális életereje (`HP`)
+        - Döntési számlálók (`PACIFIST`, `AGGRESSIVE`)
+        - Megmentett és megbarátkozott állatok listája vesszővel elválasztva (`FRIENDS`)
+        - Legyőzött állatok halállistája vesszővel elválasztva (`DEATHS`)
+    - **Visszatöltési folyamat (`GameLoader()`):**
+        - Helyreállítja a `GameSetting` számlálóit és a `Player` állapotát (`hp`, listák ürítése).
+        - A szöveges nevekből az `AdultCreatureFactory` és `PuppyCreatureFactory` segítségével újra legyártja az élő
+          `Creature` objektumokat.
+        - Egy `switch` elágazással név alapján példányosítja a megfelelő jelenetet (`restoreSceneByName()`), így a játék
+          pontosan a mentett pontról folytatódik.
+    - **Jelenetekbe integrált mentési lehetőség (3. opció):**
+        - Minden jelenet választási menüjében megjelenik a `[3] Save game and exit.` opció.
+        - Kiválasztásakor meghívódik a `SaveManager.GameSaver(this)`, elmenti az állapotot és kilép a programból.
+    - **Főmenü integráció (`StartMenu`):**
+        - A `SaveManager.hasSave()` ellenőrzi, létezik-e korábbi mentés.
+        - Megjelenik a `[2] Continue saved game` opció, amely közvetlenül visszatölti a mentett fejezetet.
+
+### Segédosztályok bővülése (`Tools` csomag)
+
+- **Központi bemenetkezelő (`InputHandler` - `org.example.Tools`):**
+    - Feladata: a konzolos bemenet egységes, ütközésmentes kezelése a teljes alkalmazásban.
+    - Megszünteti a többszörös `new Scanner(System.in)` példányosításból eredő puffer-összeakadást.
+    - Metódusok:
+        - `readLine()`: szöveg beolvasása `.trim()` tisztítással (levágja a felesleges szóközöket és Entereket).
+        - `readInt()`: robusztus egész szám beolvasás `try-catch` ciklussal, megelőzve a `NumberFormatException`
+          összeomlásokat érvénytelen bemenet esetén.
+- **Konzolos szövegeffektus optimalizálás (`TextEffect` - `org.example.Tools`):**
+    - Az `available() > 0` segítségével Enter leütésekor azonnal kiírja a maradék szöveget.
+    - **ANSI kurzor-visszaléptetés (`\u001b[1A\r` és oszlop-pozicionálás):** megszünteti a konzol automatikus
+      soremelését gyorsításkor, így a szavak nem törnek ketté a képernyőn.
+
+### Lezárás és statisztikák (`Closing_Scene` - `org.example.GameControl.Scenes`)
+
+- **Történeti lezárások kiértékelése:**
+    - Három különböző epilógus szöveg a döntések és a halállista alapján:
+        1. *Tiszta békés sanctuary befejezés* (ha a halállista üres: `player.getDeathList().isEmpty()`).
+        2. *Törékeny fegyverszünet* (ha a barátok száma nagyobb, mint a halottaké).
+        3. *Háború a sötét erdővel* (ha a halottak száma dominál).
+- **Generikus gyűjtemények rendezése (Követelményi pont):**
+    - A játék végén a megmentett állatok (`friends`) és a legyőzött lények (`defeated`) ábécésorrendbe rendezve jelennek
+      meg.
+    - `Comparator.comparing(Creature::getName)` és lambda kifejezés
+      `(c1, c2) -> c1.getName().compareToIgnoreCase(c2.getName())` megvalósításával.
+- **Játék újraindítási ciklus:**
+    - A statisztikai tábla után a játékos választhat:
+        - `[1] Play a new game` $\rightarrow$ visszalép a `StartMenu`-be és nullázza az állapotot.
+        - `[2] Exit` $\rightarrow$ kilép a játékból.
+
+### Kivételkezelés (`Combat` csomag)
+
+- **`InvalidCombatActionException`:**
+    - Egyedi, ellenőrizetlen domén kivétel, amely érvénytelen harci cselekvés (nem 1, 2, 3) kiválasztásakor dobódik és
+      kerül elkapásra a `Battle.playerTurn()` ciklusában.
