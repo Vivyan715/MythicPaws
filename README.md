@@ -1,10 +1,24 @@
 # MythicPaws console game
 
+- **Készítette:** Kiss Vivien Brigitta [Neptun kód: B9OLMI]
+- **Projekt:** MythicPaws – Szöveges RPG és Kalandjáték
+- **Dátum:** 2026. november
+
 ## Amiben a játék íródott:
 - Java 17 (JDK 17)
 - Maven 3.9+
+- - **Konzol támogatás:** ANSI escape kódokat támogató terminál (pl. IntelliJ beépített terminál, Windows Terminal)
+ 
+## Fordítás (Build)
+A projekt tiszta forrásból való lefordításához és összeállításához futtasd a gyökérkönyvtárban az alábbi parancsot:
+```bash
+mvn clean compile
+```
 
 ## Összefoglaló a játék menetéről és történetéről
+
+### Az alapötlet és kiindulás
+A játékhoz az alapötletet az Undertale játék szolgáltatta. Ezt a koncepciót egyszerűsítettem le egy rövid döntés és sztori alapú játékká.
 
 ### Történet:
 Egy vadőr szerepébe helyezed magad, aki a kutyájával az erdőben él egy fa kuckóban. A játék során az erdő különleges lakóival találkozhatsz és ismerkedhetsz meg. Te, mint játékos döntöd el, hogy ezekkel az állatokkal barátságot kötsz vagy háborút kezdeményezel. A történeti szálak részletes leírását és magyar szövegét a `Concept.md` fájl tartalmazza. 
@@ -63,3 +77,45 @@ Részletesebben a működést a `Structure.md` fájl tartalmazza. Ezt a fejleszt
 
 ### Strategy minta
 - A harci döntések (akciók) különálló, dinamikusan cserélhető algoritmusokként való megvalósítása ahelyett, hogy a harci motorban egy nagy elágazás lenne.
+
+- **Használat:**
+    - _Strategy interfész:_  `CombatAction`
+    - _Stratégiák:_
+        -  `AttackAction` --> levonja a sebzést a creature-től
+        -  `DefendAction` --> ezzel tud a játékos védekezni
+        -  `HealAction` --> ezzel tud a játékos heal-elni
+     
+
+### Template minta
+- Egy többlépcsős algoritmus (a körökre osztott harc menetének) csontvázát rögzíti egyetlen fő metódusban, miközben a konkrét részfeladatokat önálló lépésekre osztja.
+- **Használat:**
+    - Osztály és sablonmetódus: `Battle.startBattle()`
+    - A rögzített folyamatlépések:
+        - `BattleStart()` --> kezdeti állapot
+        - Ciklus:
+            - `gameStatus()` --> életerő-doboz kirajzolása
+            - `playerTurn()` --> játékos lépésének bekérése és futtatása
+            - ellenőrzés --> ha a lény meghalt, kilép a ciklusból
+            - `CreatureTurn()` --> a lény döntése --> heal, attack vagy szupererő használata
+            - kör végén reset-el --> `isDefending = false`
+        - Lezárás és kiértékelés:
+            - `Victory()` vagy `Defeat()`, majd vissza adja a `BattleResult`-ot
+         
+### Singleton minta
+- Biztosítja, hogy az osztályból pontosan egyetlen példány létezzen a memóriában a teljes játék alatt, és ahhoz egy globális hozzáférési pontot ad.
+- Központilag kezeli a játékos egyetlen példányát (Player), a kutyát (Dog), a döntésszámlálókat (pacifistChoices, aggressiveChoices), és a játék újrakezdését (resetGame()). Bármelyik jelenetből vagy a SaveManager-ből azonnal elérhető.
+- **Használat:** `GameSetting`
+- **Megvalósítás:**
+    - Privát konstruktor: `private GameSetting()`, kívülről tilos példányosítani
+    - Statikus belső mező: `private static GameSetting instance;`
+    - Globális elérési pont: `public static GameSetting getInstance()`.
+ 
+> A kutya azért került bele ebbe a mintába, mert az első koncepció szerint a lények választhattak volna hogy a Playert vagy a kutyát támadják, egyfajta csapatként működtek volna. Az idő szűke miatti egyszerűsítések során a kutya mellék szereplővé vált, viszont későbbi ötletek megvalósításához bent maradt mind a Kutya osztálya mind az elkezdett megvalósítása.
+
+> **_Eredeti koncepció:_** Itt lett volna lehetősége a Playernek választani, hogy megvédi magát és a kutyáját is, illetve a játék során fény derült volna, hogy a kutyája is rendelkezik különleges képességgel. Ezen verzió során a Player a kutyája képességei mellett tudott volna mágikus tárgyakat használni a harc és a szelidítések során, illetve lett volna lehetősége a menekülésre is ha a harc nem úgy alakul ahogy azt eltervezte. Ebben a verzióban részletesebb kimenetek lettek volna, a döntéseknek súlyosabb következményei lettek volna a történetre.
+> Ezen felül a kezdeti tervek szerint minden jelenet tartalmazott volna egy ASCII art rajzot, viszont ez egyenlőre csak az első két jelenetben került megvalósításra.
+
+
+
+
+
