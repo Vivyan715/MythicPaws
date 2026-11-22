@@ -169,14 +169,12 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
 
 ---
 
-## Megvalósított új funkciók és komponensek
+## Végére hagyott finomítások
 
 ### Perzisztencia réteg (`Persistence` csomag)
 
 - **Mentéskezelő (`SaveManager` - `org.example.Persistence`):**
     - Felelősség: az aktuális játékállapot fájlba mentése és visszatöltése a `savedGame.txt` fájl használatával.
-    - Biztonságos erőforrás-kezelés: a követelményeknek megfelelően `try-with-resources` szerkezettel (`BufferedWriter`
-      és `BufferedReader`), megelőzve az erőforrás-szivárgást.
     - **Mentett állapotok:**
         - Aktuális fejezet/jelenet osztályneve (`SCENE`)
         - Játékos aktuális életereje (`HP`)
@@ -201,31 +199,20 @@ létrehozása anélkül, hogy a kliens kód konkrét osztályokhoz kötődne.
 - **Központi bemenetkezelő (`InputHandler` - `org.example.Tools`):**
     - Feladata: a konzolos bemenet egységes, ütközésmentes kezelése a teljes alkalmazásban.
     - Megszünteti a többszörös `new Scanner(System.in)` példányosításból eredő puffer-összeakadást.
-    - Metódusok:
-        - `readLine()`: szöveg beolvasása `.trim()` tisztítással (levágja a felesleges szóközöket és Entereket).
-        - `readInt()`: robusztus egész szám beolvasás `try-catch` ciklussal, megelőzve a `NumberFormatException`
-          összeomlásokat érvénytelen bemenet esetén.
-- **Konzolos szövegeffektus optimalizálás (`TextEffect` - `org.example.Tools`):**
-    - Az `available() > 0` segítségével Enter leütésekor azonnal kiírja a maradék szöveget.
-    - **ANSI kurzor-visszaléptetés (`\u001b[1A\r` és oszlop-pozicionálás):** megszünteti a konzol automatikus
-      soremelését gyorsításkor, így a szavak nem törnek ketté a képernyőn.
 
-### Lezárás és statisztikák (`Closing_Scene` - `org.example.GameControl.Scenes`)
+### Lezárás és statisztikák
 
 - **Történeti lezárások kiértékelése:**
     - Három különböző epilógus szöveg a döntések és a halállista alapján:
-        1. *Tiszta békés sanctuary befejezés* (ha a halállista üres: `player.getDeathList().isEmpty()`).
-        2. *Törékeny fegyverszünet* (ha a barátok száma nagyobb, mint a halottaké).
+        1. *Tiszta békés befejezés* (ha a halállista üres).
+        2. *fegyverszünet* (ha a barátok száma nagyobb, mint a halottaké).
         3. *Háború a sötét erdővel* (ha a halottak száma dominál).
-- **Generikus gyűjtemények rendezése (Követelményi pont):**
-    - A játék végén a megmentett állatok (`friends`) és a legyőzött lények (`defeated`) ábécésorrendbe rendezve jelennek
-      meg.
-    - `Comparator.comparing(Creature::getName)` és lambda kifejezés
-      `(c1, c2) -> c1.getName().compareToIgnoreCase(c2.getName())` megvalósításával.
+- **Generikus gyűjtemények rendezése:**
+    - A játék végén a megmentett állatok és a legyőzött lények ábécésorrendbe rendezve jelennek meg.
 - **Játék újraindítási ciklus:**
     - A statisztikai tábla után a játékos választhat:
-        - `[1] Play a new game` $\rightarrow$ visszalép a `StartMenu`-be és nullázza az állapotot.
-        - `[2] Exit` $\rightarrow$ kilép a játékból.
+        - `[1] Play a new game` --> visszalép a `StartMenu`-be és nullázza az állapotot.
+        - `[2] Exit` --> kilép a játékból.
 
 ### Kivételkezelés (`Combat` csomag)
 
